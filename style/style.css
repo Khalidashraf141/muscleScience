@@ -120,7 +120,12 @@ li a{
     }
     li a{
         font-size: 5px;
+    }
+    .logo a{
+        font-size:25px;
+    }
 
 }
+
 
 
