@@ -1,0 +1,121 @@
+* {
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body {
+    margin: 0;
+    background: #0b1220;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+.navbar{
+    background-color: #1e2431;
+    font-family: calibri;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+.navdiv{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo a{
+    font-size: 35px;
+    font-weight: 600;
+    color: white;
+}
+li{
+    list-style: none;
+    display: inline-block;
+}
+li a{
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    margin-right: 25px;
+}
+
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 15px;
+}
+
+.pdf-card {
+    display: flex;
+    gap: 67px;
+    background: #020617;
+    padding: 15px;
+    border-radius: 32px;
+    align-items: center;
+}
+
+.pdf-cover {
+    width: 140px;
+    flex-shrink: 0;
+    border-radius: 6px;
+}
+
+.pdf-info h3 {
+    margin: 0;
+    font-size: 20px;
+}
+
+.pdf-info p {
+    color: #94a3b8;
+    margin: 6px 0 12px;
+}
+
+.btns {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 8px 14px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.read {
+    background: #2563eb;
+    color: white;
+}
+
+.download {
+    background: #16a34a;
+    color: white;
+}
+
+/* 📱 MOBILE RESPONSIVE */
+@media (max-width: 600px) {
+    .pdf-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .pdf-cover {
+        width: 100%;
+        max-width: 200px;
+        margin: auto;
+    }
+
+    .pdf-info h3 {
+        text-align: center;
+        width: 100%;
+    }
+
+    .pdf-info p {
+        text-align: center;
+    }
+
+    .btns {
+        justify-content: center;
+        width: 100%;
+    }
+}
