@@ -14,12 +14,13 @@
         <div class = "navdiv">
             <div class="logo"><a href="#">MuscleScience</a></div>
             
-            <button class="hamburger-menu" aria-label="Toggle navigation">
+            <button class="hamburger-menu" id="hamburgerBtn" aria-label="Toggle navigation">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
             </button>
-            <ul class="nav-links">
+            
+            <ul class="nav-links" id="navLinks"> 
                 <li><a href="#">Profile</a></li>
                 <li><a href="#">Contents</a></li>
                 <li><a href="#">Contact Us</a></li>
@@ -44,13 +45,25 @@
         </div>
     </div>
 
-</div> <div class="disclaimer-section"> 
+</div>
+
+<div class="disclaimer-section"> 
     <div class="disclaimer-content">
         <h4>⚠️ Medical & Legal Disclaimer</h4>
         <p>The content on MuscleScience is for informational and educational purposes only. It is not intended to be a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of a qualified physician with any questions you may have regarding a medical condition.</p>
-        <p>This website does not promote or encourage the illegal use of controlled substances or prescription drugs. Please consult before starting or stopping any medication or regimen.</p>
+        <p>This website does not promote or encourage the illegal use of controlled substances or prescription drugs. Please consult a doctor before starting or stopping any medication or regimen.</p>
     </div>
 </div>
 
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const hamburgerBtn = document.getElementById('hamburgerBtn');
+        const navLinks = document.getElementById('navLinks');
+
+        hamburgerBtn.addEventListener('click', function() {
+            navLinks.classList.toggle('active');
+        });
+    });
+</script>
 </body>
 </html>
