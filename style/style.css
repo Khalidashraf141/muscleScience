@@ -1,6 +1,33 @@
-/* ... (Existing CSS up to .nav-links) ... */
+* {
+    box-sizing: border-box;
+    text-decoration: none;
+}
 
-/* ADDED CLASS TO UL for consistency */
+body {
+    margin: 0;
+    background: #0b1220;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+.navbar{
+    background-color: #1e2431;
+    font-family: calibri;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+.navdiv{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo a{
+    font-size: 35px;
+    font-weight: 600;
+    color: white;
+}
+
+/* ADDED: Styles for the navigation links list */
 .nav-links {
     padding: 0;
     margin: 0;
@@ -37,7 +64,98 @@
     border-radius: 2px;
 }
 
-/* ... (Existing CSS for .container, .pdf-card, etc.) ... */
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 15px;
+    /* Ensure content pushes the footer down */
+    min-height: calc(100vh - 100px); 
+}
+
+.pdf-card {
+    display: flex;
+    gap: 67px;
+    background: #020617;
+    padding: 21px;
+    border-radius: 32px;
+    align-items: center;
+    margin-bottom: 25px; 
+}
+
+.pdf-cover {
+    width: 140px;
+    flex-shrink: 0;
+    border-radius: 6px;
+}
+
+.pdf-info h3 {
+    margin: 0;
+    font-size: 20px;
+}
+
+.pdf-info p {
+    color: #94a3b8;
+    margin: 6px 0 12px;
+}
+
+.btns {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 8px 14px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.read {
+    background: #2563eb;
+    color: white;
+}
+
+.download {
+    background: #16a34a;
+    color: white;
+}
+
+/* UPDATED: Disclaimer Styling for Footer position */
+.disclaimer-section {
+    padding: 30px 15px; /* Added top/bottom padding */
+    margin-top: 60px; /* Increased margin from main content */
+    background-color: #1e2431; /* Darker background for footer */
+    border-top: 1px solid #ff4d4d; /* Red border at the top for emphasis */
+    text-align: center; 
+}
+
+.disclaimer-content {
+    max-width: 800px; /* Limit width for readability */
+    margin: auto; /* Center the content block */
+    background-color: #331e1e; /* Dark red/brown background for the box */
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #ff4d4d;
+    text-align: left; /* Make the text left-aligned inside the content box */
+}
+
+.disclaimer-section h4 {
+    color: #ff4d4d; /* Bright red text for heading */
+    margin-top: 0;
+    font-size: 16px;
+    border-bottom: 1px dashed #ff4d4d;
+    padding-bottom: 8px;
+    margin-bottom: 10px;
+}
+
+.disclaimer-section p {
+    font-size: 14px;
+    color: #ccc;
+    line-height: 1.5;
+    margin-bottom: 0; 
+}
 
 /* ====================================
    📱 RESPONSIVENESS (Mobile Navigation)
@@ -47,13 +165,12 @@
     /* Show the hamburger icon */
     .hamburger-menu {
         display: flex; 
-        /* Ensure it appears above the menu links when stacking */
-        z-index: 1000; 
     }
     
-    /* Hide the desktop links on mobile by default */
+    /* Hide the desktop links on mobile */
     .nav-links {
         display: none; 
+        /* The following styles are for when the menu is opened via JavaScript (using a class like 'active') */
         flex-direction: column;
         width: 100%;
         position: absolute;
@@ -62,11 +179,6 @@
         background-color: #1e2431;
         padding: 10px 0;
         border-top: 1px solid #0b1220;
-    }
-
-    /* NEW: This class is toggled by JavaScript to make the menu visible */
-    .nav-links.active {
-        display: flex; 
     }
 
     /* Make list items stack */
