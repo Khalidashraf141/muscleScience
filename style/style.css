@@ -92,40 +92,47 @@ li a{
     color: white;
 }
 
-/* 📱 MOBILE RESPONSIVE */
-@media (max-width: 360px) {
+
+/* =========================
+   📱 MOBILE / IPHONE FIX
+   ========================= */
+@media (max-width: 480px) {
+
+    /* NAVBAR */
+    .navdiv {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .logo a {
+        font-size: 22px;
+    }
+
+    .nav-links {
+        gap: 16px;
+    }
+
+    .nav-links a {
+        font-size: 14px;
+    }
+
+    /* PDF CARD */
     .pdf-card {
         flex-direction: column;
-        align-items: flex-start;
+        text-align: center;
     }
 
     .pdf-cover {
         width: 100%;
-        max-width: 200px;
+        max-width: 180px;
         margin: auto;
-    }
-
-    .pdf-info h3 {
-        text-align: center;
-        width: 100%;
-    }
-
-    .pdf-info p {
-        text-align: center;
     }
 
     .btns {
         justify-content: center;
-        width: 100%;
     }
-    li a{
-        font-size: 5px;
-    }
-    .logo a{
-        font-size:25px;
-    }
-
 }
+
 
 
 
