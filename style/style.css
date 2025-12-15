@@ -167,10 +167,9 @@ body {
         display: flex; 
     }
     
-    /* Hide the desktop links on mobile */
+    /* Hide the desktop links on mobile by default */
     .nav-links {
         display: none; 
-        /* The following styles are for when the menu is opened via JavaScript (using a class like 'active') */
         flex-direction: column;
         width: 100%;
         position: absolute;
@@ -179,6 +178,13 @@ body {
         background-color: #1e2431;
         padding: 10px 0;
         border-top: 1px solid #0b1220;
+        /* Ensure the menu appears above other elements */
+        z-index: 999; 
+    }
+
+    /* NEW: This class is toggled by JavaScript to make the menu visible */
+    .nav-links.active {
+        display: flex; 
     }
 
     /* Make list items stack */
@@ -236,4 +242,3 @@ body {
         padding: 15px;
     }
 }
-/* Removed redundant or invalid mobile media queries from the end of the file */
