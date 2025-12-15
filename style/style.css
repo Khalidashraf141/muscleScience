@@ -10,7 +10,6 @@ body {
     font-family: Arial, sans-serif;
 }
 
-/* --- NAVBAR STYLES --- */
 .navbar{
     background-color: #1e2431;
     font-family: calibri;
@@ -27,36 +26,60 @@ body {
     font-weight: 600;
     color: white;
 }
-ul { /* Target the list wrapper for better control */
+
+/* ADDED: Styles for the navigation links list */
+.nav-links {
     padding: 0;
     margin: 0;
 }
-li{
+.nav-links li{
     list-style: none;
     display: inline-block;
 }
-li a{
+.nav-links li a{
     color: white;
     font-size: 18px;
     font-weight: bold;
     margin-right: 25px;
 }
 
-/* --- MAIN CONTENT CONTAINER --- */
+/* --- HAMBURGER STYLING (Desktop: Hidden) --- */
+.hamburger-menu {
+    display: none; /* Hidden on desktop */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    width: 30px;
+    height: 25px;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.bar {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    border-radius: 2px;
+}
+
 .container {
     max-width: 900px;
     margin: auto;
     padding: 15px;
+    /* Ensure content pushes the footer down */
+    min-height: calc(100vh - 100px); 
 }
 
-/* --- PDF CARD STYLES --- */
 .pdf-card {
     display: flex;
     gap: 67px;
     background: #020617;
-    padding: 15px;
+    padding: 21px;
     border-radius: 32px;
     align-items: center;
+    margin-bottom: 25px; 
 }
 
 .pdf-cover {
@@ -99,62 +122,118 @@ li a{
     color: white;
 }
 
+/* UPDATED: Disclaimer Styling for Footer position */
+.disclaimer-section {
+    padding: 30px 15px; /* Added top/bottom padding */
+    margin-top: 60px; /* Increased margin from main content */
+    background-color: #1e2431; /* Darker background for footer */
+    border-top: 1px solid #ff4d4d; /* Red border at the top for emphasis */
+    text-align: center; 
+}
+
+.disclaimer-content {
+    max-width: 800px; /* Limit width for readability */
+    margin: auto; /* Center the content block */
+    background-color: #331e1e; /* Dark red/brown background for the box */
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #ff4d4d;
+    text-align: left; /* Make the text left-aligned inside the content box */
+}
+
+.disclaimer-section h4 {
+    color: #ff4d4d; /* Bright red text for heading */
+    margin-top: 0;
+    font-size: 16px;
+    border-bottom: 1px dashed #ff4d4d;
+    padding-bottom: 8px;
+    margin-bottom: 10px;
+}
+
+.disclaimer-section p {
+    font-size: 14px;
+    color: #ccc;
+    line-height: 1.5;
+    margin-bottom: 0; 
+}
 
 /* ====================================
-   📱 RESPONSIVENESS (For Phones/Small Screens)
+   📱 RESPONSIVENESS (Mobile Navigation)
    ==================================== */
-
-/* Apply changes when the screen width is 600px or less */
 @media (max-width: 600px) {
-
-    /* --- NAVBAR Adjustments --- */
-    .navdiv {
-        /* Stack logo and links vertically */
+    
+    /* Show the hamburger icon */
+    .hamburger-menu {
+        display: flex; 
+    }
+    
+    /* Hide the desktop links on mobile */
+    .nav-links {
+        display: none; 
+        /* The following styles are for when the menu is opened via JavaScript (using a class like 'active') */
         flex-direction: column;
-        gap: 10px; /* Space between logo and links */
+        width: 100%;
+        position: absolute;
+        top: 60px; /* Assuming navbar height is around 60px */
+        left: 0;
+        background-color: #1e2431;
         padding: 10px 0;
+        border-top: 1px solid #0b1220;
+    }
+
+    /* Make list items stack */
+    .nav-links li {
+        display: block;
+        text-align: center;
+        padding: 8px 0;
+    }
+
+    .nav-links li a {
+        font-size: 16px;
+        margin-right: 0;
+    }
+    
+    /* Adjustments to the Navbar Div */
+    .navdiv {
+        flex-direction: row; /* Keep logo and hamburger horizontal */
+        align-items: center;
+        justify-content: space-between;
     }
 
     .logo a {
-        /* Make logo smaller for mobile */
-        font-size: 26px; 
+        font-size: 26px; /* Smaller logo */
     }
 
-    li a {
-        /* Make link text slightly smaller */
-        font-size: 16px; 
-        margin-right: 15px;
-    }
+}
     
-    /* Center the last link to look better when wrapped */
-    li:last-child a {
-        margin-right: 0;
-    }
+/* =========================
+   📱 EXISTING MOBILE FIXES 
+   ========================= */
+@media (max-width: 480px) {
 
-
-    /* --- PDF CARD Adjustments --- */
+    /* PDF CARD */
     .pdf-card {
-        /* Stack cover and info vertically */
         flex-direction: column;
         text-align: center;
-        gap: 20px; /* Adjust vertical gap */
     }
 
     .pdf-cover {
-        /* Allow cover to take full width but limit max size */
         width: 100%;
-        max-width: 180px; 
+        max-width: 180px;
+        margin: auto;
     }
 
     .btns {
-        /* Center buttons horizontally */
         justify-content: center;
-        gap: 15px; /* Increase gap between buttons */
     }
 
-    .btn {
-        /* Ensure buttons remain legible and clickable */
-        padding: 10px 18px;
-        font-size: 16px;
+    /* DISCLAIMER */
+    .disclaimer-section {
+        padding: 20px 10px;
+        margin-top: 40px;
+    }
+    .disclaimer-content {
+        padding: 15px;
     }
 }
+/* Removed redundant or invalid mobile media queries from the end of the file */
