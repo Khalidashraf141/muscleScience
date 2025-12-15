@@ -51,7 +51,7 @@
     <div class="disclaimer-content">
         <h4>⚠️ Medical & Legal Disclaimer</h4>
         <p>The content on MuscleScience is for informational and educational purposes only. It is not intended to be a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of a qualified physician with any questions you may have regarding a medical condition.</p>
-        <p>This website does not promote or encourage the illegal use of controlled substances or prescription drugs. Please consult a doctor before starting or stopping any medication or regimen.</p>
+        <p>This website does not promote or encourage the illegal use of controlled substances or prescription drugs. Please consult before starting or stopping any medication or regimen.</p>
     </div>
 </div>
 
@@ -60,7 +60,9 @@
         const hamburgerBtn = document.getElementById('hamburgerBtn');
         const navLinks = document.getElementById('navLinks');
 
+        // Add a click listener to the button
         hamburgerBtn.addEventListener('click', function() {
+            // This toggles the 'active' class on the navigation links
             navLinks.classList.toggle('active');
         });
     });
