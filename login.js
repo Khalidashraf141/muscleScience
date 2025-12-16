@@ -15,7 +15,7 @@ const firebaseConfig = {
 // IMPORTANT: This MUST match the domain you used to create the user 
 // in the Firebase Console (e.g., 'admin@yoursiteaccess.com').
 // ====================================================================
-const DUMMY_DOMAIN = '@yoursiteaccess.com';
+const DUMMY_DOMAIN = '@gmail.com';
 
 // Initialize Firebase App and Authentication Service (using 'compat' method)
 const app = firebase.initializeApp(firebaseConfig);
