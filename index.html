@@ -1,21 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en" id="ms-login-auth"> <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MuscleScience - Secure Access</title>
-    <link rel="stylesheet" href="style/style.css">
-
+    
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     
     <style>
-        body {
+        /* All styles are now prefixed with #ms-login-auth to prevent leakage */
+        
+        #ms-login-auth body {
+            margin: 0;
+            padding: 0;
+            background-color: #000000;
+            color: #ffffff;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+            font-family: 'Inter', sans-serif;
+        }
 
-        overflow-x: hidden; /* This kills the horizontal scroll */
+        /* Scoped Variables */
+        #ms-login-auth {
+            --accent-blue: #0070f3;
+            --accent-pink: #ff0080;
+            --text-muted: #888888;
+        }
 
-    }
-        /* Ambient Background "Auras" */
-        .aura {
+        /* Ambient Backgrounds scoped */
+        #ms-login-auth .aura {
             position: absolute;
             width: 50vw;
             height: 50vw;
@@ -23,24 +39,26 @@
             filter: blur(120px);
             z-index: -1;
             opacity: 0.12;
+            pointer-events: none;
         }
-        .aura-1 { background: var(--accent-blue); top: -10%; left: -10%; }
-        .aura-2 { background: var(--accent-pink); bottom: -10%; right: -10%; }
+        #ms-login-auth .aura-1 { background: var(--accent-blue); top: -10%; left: -10%; }
+        #ms-login-auth .aura-2 { background: var(--accent-pink); bottom: -10%; right: -10%; }
 
-        /* Login Form Styling */
-        #login-form {
+        /* Scoped Login Container */
+        #ms-login-container {
             position: relative;
-            width: 100%;
+            width: 90%;
             max-width: 400px; 
             padding: 40px; 
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
+            background-color: #0a0a0a;
+            border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 12px;
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+            z-index: 10;
         }
 
         /* The signature Next.js top gradient line */
-        #login-form::after {
+        #ms-login-container::after {
             content: "";
             position: absolute;
             top: -1px;
@@ -51,22 +69,23 @@
             filter: blur(0.5px);
         }
 
-        #login-form h2 { 
+        #ms-login-container h2 { 
             text-align: center; 
             font-size: 1.5rem;
             font-weight: 700;
-            margin-bottom: 8px;
+            margin: 0 0 8px 0;
             letter-spacing: -0.02em;
+            color: #ffffff;
         }
 
-        .subtitle {
+        #ms-login-container .subtitle {
             text-align: center;
             color: var(--text-muted);
             font-size: 0.9rem;
             margin-bottom: 32px;
         }
 
-        label {
+        #ms-login-container label {
             display: block;
             font-size: 0.75rem;
             color: var(--text-muted);
@@ -75,26 +94,27 @@
             letter-spacing: 0.05em;
         }
 
-        input[type="text"], input[type="password"] {
+        #ms-login-container input {
             display: block;
             width: 100%;
             padding: 12px 16px;
             margin-bottom: 20px;
             background-color: rgba(255, 255, 255, 0.03);
-            border: 1px solid var(--border-color);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 8px;
             color: white;
             font-size: 1rem;
             transition: all 0.2s ease;
+            box-sizing: border-box;
         }
 
-        input:focus {
+        #ms-login-container input:focus {
             outline: none;
             border-color: #444;
             background-color: rgba(255, 255, 255, 0.06);
         }
 
-        button#login-button {
+        #ms-login-container #login-button {
             display: block;
             width: 100%;
             padding: 12px;
@@ -108,15 +128,11 @@
             transition: transform 0.1s ease, opacity 0.2s ease;
         }
 
-        button#login-button:hover {
+        #ms-login-container #login-button:hover {
             opacity: 0.9;
         }
 
-        button#login-button:active {
-            transform: scale(0.98);
-        }
-
-        #error-message { 
+        #ms-login-container #error-message { 
             margin-top: 15px; 
             font-size: 0.85rem;
             text-align: center; 
@@ -129,32 +145,28 @@
     <div class="aura aura-1"></div>
     <div class="aura aura-2"></div>
 
-    <div id="login-form">
+    <div id="ms-login-container">
         <h2>MuscleScience</h2>
         <p class="subtitle">Secure Client Portal</p>
         
-        <label for="username">Username</label>
-        <input type="text" id="username" placeholder="admin" required>
-        
-        <label for="password">Password</label>
-        <input type="password" id="password" placeholder="••••••••" required>
-        
-        <button id="login-button">Log In</button>
+        <form onsubmit="return false;">
+            <label for="username">Username</label>
+            <input type="text" id="username" placeholder="admin" required>
+            
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="••••••••" required>
+            
+            <button id="login-button">Log In</button>
+        </form>
         
         <p id="error-message"></p>
     </div>
 
-    <div id="protected-content" style="display: none;">
-        </div>
+    <div id="protected-content" style="display: none;"></div>
     
     <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth-compat.js"></script>
     <script src="login.js"></script>
 
 </body>
-
 </html>
-
-
-
-
