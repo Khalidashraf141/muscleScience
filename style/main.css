@@ -150,8 +150,9 @@ body {
     height: 3px;
     background: white;
 }
+
 /* =========================
-   DISCLAIMER (BEAUTIFUL)
+   Disclaimer (Desktop)
 ========================= */
 .disclaimer-section {
     margin-top: 80px;
@@ -190,6 +191,7 @@ body {
    Responsive
 ========================= */
 @media (max-width: 768px) {
+
     .hamburger-menu {
         display: flex;
     }
@@ -228,5 +230,27 @@ body {
         justify-content: center;
         flex-wrap: wrap;
     }
-}
 
+    /* ✅ Mobile Disclaimer Fix */
+    .disclaimer-section {
+        padding: 35px 15px;
+        margin-top: 50px;
+    }
+
+    .disclaimer-content {
+        padding: 25px 20px;
+        border-left: none;
+        border-top: 4px solid #f59e0b;
+        border-radius: 14px;
+    }
+
+    .disclaimer-content h4 {
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .disclaimer-content p {
+        font-size: 14px;
+        line-height: 1.65;
+    }
+}
