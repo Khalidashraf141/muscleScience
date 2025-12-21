@@ -11,6 +11,7 @@ body {
     color: white;
     font-family: 'Segoe UI', Arial, sans-serif;
     line-height: 1.6;
+    overflow-x: hidden; /* Prevents side-scrolling */
 }
 
 /* Navbar Fixes */
@@ -20,20 +21,26 @@ body {
     position: sticky;
     top: 0;
     z-index: 1000;
+    width: 100%; /* Ensures navbar stretches across screen */
 }
 
 .navdiv {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-between; /* Pushes Logo left, Links right */
     max-width: 1200px;
     margin: auto;
+}
+
+.logo {
+    flex-shrink: 0; /* Prevents the logo from getting squashed */
 }
 
 .logo a {
     font-size: 28px;
     font-weight: 700;
     color: white;
+    white-space: nowrap; /* Keeps name on one line */
 }
 
 .nav-links {
@@ -49,13 +56,10 @@ body {
     transition: color 0.3s;
 }
 
-.nav-links li a:hover {
-    color: #2563eb;
-}
-
 /* Container & Cards */
 .container {
-    max-width: 1000px;
+    max-width: 1000px; /* Widened for a better desktop look */
+    width: 90%;
     margin: 40px auto;
     padding: 20px;
     min-height: 70vh;
@@ -67,12 +71,13 @@ body {
     padding: 30px;
     border-radius: 20px;
     align-items: center;
-    gap: 40px;
+    gap: 40px; /* Space between cover and text */
     border: 1px solid rgba(255,255,255,0.05);
 }
 
 .pdf-cover {
     width: 160px;
+    flex-shrink: 0; /* Prevents image from shrinking */
     border-radius: 12px;
     box-shadow: 0 10px 20px rgba(0,0,0,0.3);
 }
@@ -82,47 +87,25 @@ body {
     margin-bottom: 5px;
 }
 
-.pdf-info p {
-    color: #94a3b8;
-    margin-bottom: 20px;
-}
-
 .btns {
     display: flex;
     gap: 15px;
+    margin-top: 15px;
 }
 
 .btn {
     padding: 10px 20px;
     border-radius: 8px;
     font-weight: 600;
-    transition: transform 0.2s, filter 0.2s;
+    color: white;
 }
 
-.btn:active { transform: scale(0.95); }
-
-.read { background: #2563eb; color: white; }
-.download { background: #16a34a; color: white; }
-
-/* Disclaimer */
-.disclaimer-section {
-    background-color: #1e2431;
-    padding: 40px 20px;
-    margin-top: 50px;
-}
-
-.disclaimer-content {
-    max-width: 800px;
-    margin: auto;
-    background: rgba(255, 77, 77, 0.05);
-    padding: 20px;
-    border-radius: 12px;
-    border: 1px solid #ff4d4d;
-}
+.read { background: #2563eb; }
+.download { background: #16a34a; }
 
 /* Mobile Responsiveness */
 .hamburger-menu {
-    display: none;
+    display: none; /* Desktop hidden */
     flex-direction: column;
     gap: 5px;
     background: none;
@@ -134,14 +117,13 @@ body {
     width: 25px;
     height: 3px;
     background: white;
-    border-radius: 2px;
 }
 
 @media (max-width: 768px) {
     .hamburger-menu { display: flex; }
 
     .nav-links {
-        display: none; /* Hidden by default on mobile */
+        display: none; 
         position: absolute;
         top: 60px;
         left: 0;
@@ -158,7 +140,7 @@ body {
     .nav-links li a { margin: 0; }
 
     .pdf-card {
-        flex-direction: column;
+        flex-direction: column; /* Stack image on top of text on mobile */
         text-align: center;
         gap: 20px;
     }
