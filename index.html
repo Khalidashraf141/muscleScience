@@ -8,91 +8,88 @@
     <link rel="stylesheet" href="style/style.css">
 
     <style>
-        /* SCOPED CSS: 
-           All rules start with #portal-gate to ensure they 
-           don't interfere with your other HTML files. 
+        /* SCOPED STYLES: 
+           These ONLY apply to the login page.
+           They use higher 'specificity' to look good over your style.css
         */
         #portal-gate {
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 90vh;
+            /* Adjust height to account for your navbar if it exists on this page */
+            min-height: 80vh; 
             padding: 20px;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         #portal-gate #app-container {
-            background: #ffffff;
+            /* We use a slightly lighter dark color than your body (#0b1220) 
+               to make the card 'float' */
+            background: #1e2431; 
             width: 100%;
             max-width: 400px;
             padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-            border: 1px solid #f0f0f0;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         #portal-gate h2 {
-            margin-bottom: 25px;
-            font-size: 24px;
-            color: #333;
+            margin-bottom: 30px;
+            font-size: 26px;
+            color: #ffffff; /* Matches your site color */
             text-align: center;
+            font-family: 'Calibri', sans-serif;
         }
 
-        /* Input styling with specific selector to avoid global style leakage */
         #portal-gate input[type="text"], 
         #portal-gate input[type="password"] {
             display: block;
             width: 100%;
-            padding: 14px;
-            margin-bottom: 15px;
-            box-sizing: border-box; /* Crucial for keeping width exact */
-            border: 1px solid #ddd;
-            border-radius: 6px;
+            padding: 14px 18px;
+            margin-bottom: 20px;
+            background: #0b1220; /* Matches your site background */
+            border: 1px solid #3d465a;
+            border-radius: 10px;
             font-size: 16px;
+            color: white;
+            outline: none;
             transition: all 0.3s ease;
         }
 
         #portal-gate input:focus {
-            outline: none;
-            border-color: #007bff;
-            box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+            border-color: #2563eb; /* Matches your .read button blue */
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
         }
 
-        /* Button styling */
         #portal-gate button#login-button {
             display: block;
             width: 100%;
             padding: 14px;
-            background-color: #007bff;
+            background-color: #2563eb; /* Matches your .read button blue */
             color: white;
             font-size: 16px;
-            font-weight: 600;
+            font-weight: bold;
             cursor: pointer;
             border: none;
-            border-radius: 6px;
-            transition: background 0.2s, transform 0.1s;
+            border-radius: 10px;
+            transition: transform 0.2s, background 0.3s;
         }
 
         #portal-gate button#login-button:hover {
-            background-color: #0056b3;
+            background-color: #1d4ed8;
+            transform: translateY(-1px);
         }
 
         #portal-gate button#login-button:active {
-            transform: scale(0.98);
+            transform: translateY(0);
         }
 
-        /* Error message styling */
         #portal-gate #error-message {
             margin-top: 15px;
-            color: #d63031;
+            color: #ff4d4d; /* Matches your disclaimer red */
             font-size: 14px;
-            font-weight: 500;
             text-align: center;
-        }
-
-        /* Ensure protected content is also centered */
-        #portal-gate #protected-content {
-            text-align: center;
+            min-height: 20px;
         }
     </style>
 </head>
@@ -102,9 +99,9 @@
         <div id="app-container">
             
             <div id="login-form">
-                <h2>Client Access Required</h2>
+                <h2>Client Login</h2>
                 
-                <input type="text" id="username" placeholder="Username (e.g., admin)" required>
+                <input type="text" id="username" placeholder="Username" required>
                 
                 <input type="password" id="password" placeholder="Password" required>
                 
@@ -120,7 +117,6 @@
 
     <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth-compat.js"></script>
-    
     <script src="login.js"></script>
 
 </body>
