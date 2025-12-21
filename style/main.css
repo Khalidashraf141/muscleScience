@@ -150,6 +150,41 @@ body {
     height: 3px;
     background: white;
 }
+/* =========================
+   DISCLAIMER (BEAUTIFUL)
+========================= */
+.disclaimer-section {
+    margin-top: 80px;
+    padding: 50px 20px;
+    background: linear-gradient(
+        180deg,
+        rgba(30,36,49,0.9),
+        rgba(11,18,32,1)
+    );
+    border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.disclaimer-content {
+    max-width: 900px;
+    margin: auto;
+    padding: 35px 40px;
+    background: rgba(255,255,255,0.03);
+    border-radius: 18px;
+    border-left: 5px solid #f59e0b;
+}
+
+.disclaimer-content h4 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #fbbf24;
+}
+
+.disclaimer-content p {
+    font-size: 15px;
+    color: #d1d5db;
+    margin-bottom: 12px;
+    line-height: 1.7;
+}
 
 /* =========================
    Responsive
@@ -194,3 +229,4 @@ body {
         flex-wrap: wrap;
     }
 }
+
