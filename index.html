@@ -4,53 +4,120 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Secure Client Content Portal</title>
+    
     <link rel="stylesheet" href="style/style.css">
-    <style>
-        /* Basic CSS for clean presentation */
 
-        h2 { text-align: center; color: #333; }
-        input[type="text"], input[type="password"], button {
+    <style>
+        /* SCOPED CSS: 
+           All rules start with #portal-gate to ensure they 
+           don't interfere with your other HTML files. 
+        */
+        #portal-gate {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 90vh;
+            padding: 20px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        #portal-gate #app-container {
+            background: #ffffff;
+            width: 100%;
+            max-width: 400px;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            border: 1px solid #f0f0f0;
+        }
+
+        #portal-gate h2 {
+            margin-bottom: 25px;
+            font-size: 24px;
+            color: #333;
+            text-align: center;
+        }
+
+        /* Input styling with specific selector to avoid global style leakage */
+        #portal-gate input[type="text"], 
+        #portal-gate input[type="password"] {
             display: block;
             width: 100%;
-            padding: 12px;
+            padding: 14px;
             margin-bottom: 15px;
-            box-sizing: border-box;
-            border: 1px solid #ccc;
-            border-radius: 4px;
+            box-sizing: border-box; /* Crucial for keeping width exact */
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 16px;
+            transition: all 0.3s ease;
         }
-        button {
+
+        #portal-gate input:focus {
+            outline: none;
+            border-color: #007bff;
+            box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+        }
+
+        /* Button styling */
+        #portal-gate button#login-button {
+            display: block;
+            width: 100%;
+            padding: 14px;
             background-color: #007bff;
             color: white;
             font-size: 16px;
+            font-weight: 600;
             cursor: pointer;
-            transition: background-color 0.3s;
+            border: none;
+            border-radius: 6px;
+            transition: background 0.2s, transform 0.1s;
         }
-        button:hover {
+
+        #portal-gate button#login-button:hover {
             background-color: #0056b3;
         }
-        #error-message { margin-top: 10px; font-weight: bold; text-align: center; }
+
+        #portal-gate button#login-button:active {
+            transform: scale(0.98);
+        }
+
+        /* Error message styling */
+        #portal-gate #error-message {
+            margin-top: 15px;
+            color: #d63031;
+            font-size: 14px;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        /* Ensure protected content is also centered */
+        #portal-gate #protected-content {
+            text-align: center;
+        }
     </style>
 </head>
 <body>
 
-    <div id="app-container">
-        
-        <div id="login-form">
-            <h2>Client Access Required</h2>
+    <div id="portal-gate">
+        <div id="app-container">
             
-            <input type="text" id="username" placeholder="Username (e.g., admin)" required>
-            
-            <input type="password" id="password" placeholder="Password" required>
-            
-            <button id="login-button">Log In</button>
-            <p id="error-message"></p>
-        </div>
-
-        <div id="protected-content" style="display: none;">
+            <div id="login-form">
+                <h2>Client Access Required</h2>
+                
+                <input type="text" id="username" placeholder="Username (e.g., admin)" required>
+                
+                <input type="password" id="password" placeholder="Password" required>
+                
+                <button id="login-button">Log In</button>
+                <p id="error-message"></p>
             </div>
-        
+
+            <div id="protected-content" style="display: none;">
+                </div>
+            
+        </div>
     </div>
-    
+
     <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth-compat.js"></script>
     
@@ -58,4 +125,3 @@
 
 </body>
 </html>
-
