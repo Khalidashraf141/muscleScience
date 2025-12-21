@@ -1,4 +1,6 @@
-/* Global Resets */
+/* =========================
+   Global Reset
+========================= */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -11,36 +13,34 @@ body {
     color: white;
     font-family: 'Segoe UI', Arial, sans-serif;
     line-height: 1.6;
-    overflow-x: hidden; /* Prevents side-scrolling */
+    overflow-x: hidden;
 }
 
-/* Navbar Fixes */
+/* =========================
+   Navbar
+========================= */
 .navbar {
     background-color: #1e2431;
-    padding: 10px 20px;
+    padding: 12px 20px;
     position: sticky;
     top: 0;
     z-index: 1000;
-    width: 100%; /* Ensures navbar stretches across screen */
+    width: 100%;
 }
 
 .navdiv {
-    display: flex;
-    align-items: center;
-    justify-content: space-between; /* Pushes Logo left, Links right */
     max-width: 1200px;
     margin: auto;
-}
-
-.logo {
-    flex-shrink: 0; /* Prevents the logo from getting squashed */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .logo a {
     font-size: 28px;
     font-weight: 700;
     color: white;
-    white-space: nowrap; /* Keeps name on one line */
+    white-space: nowrap;
 }
 
 .nav-links {
@@ -53,59 +53,91 @@ body {
     font-size: 16px;
     font-weight: 600;
     margin-left: 25px;
-    transition: color 0.3s;
+    transition: color 0.3s ease;
+    white-space: nowrap;
 }
 
-/* Container & Cards */
+.nav-links li a:hover {
+    color: white;
+}
+
+/* =========================
+   Container
+========================= */
 .container {
-    max-width: 1000px; /* Widened for a better desktop look */
-    width: 90%;
+    max-width: 1200px;
+    width: 100%;
     margin: 40px auto;
     padding: 20px;
     min-height: 70vh;
 }
 
+/* =========================
+   PDF Card
+========================= */
 .pdf-card {
     display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
     background: #1e2431;
     padding: 30px;
     border-radius: 20px;
-    align-items: center;
-    gap: 40px; /* Space between cover and text */
-    border: 1px solid rgba(255,255,255,0.05);
+    border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .pdf-cover {
     width: 160px;
-    flex-shrink: 0; /* Prevents image from shrinking */
     border-radius: 12px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.35);
+    flex-shrink: 0;
 }
 
 .pdf-info h3 {
-    font-size: 24px;
-    margin-bottom: 5px;
+    font-size: 26px;
+    margin-bottom: 6px;
 }
 
+.pdf-info p {
+    color: #9ca3af;
+}
+
+/* =========================
+   Buttons
+========================= */
 .btns {
     display: flex;
     gap: 15px;
-    margin-top: 15px;
+    margin-top: 18px;
 }
 
 .btn {
-    padding: 10px 20px;
+    padding: 10px 22px;
     border-radius: 8px;
     font-weight: 600;
     color: white;
+    cursor: pointer;
+    transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
-.read { background: #2563eb; }
-.download { background: #16a34a; }
+.btn:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
 
-/* Mobile Responsiveness */
+.read {
+    background: #2563eb;
+}
+
+.download {
+    background: #16a34a;
+}
+
+/* =========================
+   Mobile Menu
+========================= */
 .hamburger-menu {
-    display: none; /* Desktop hidden */
+    display: none;
     flex-direction: column;
     gap: 5px;
     background: none;
@@ -119,11 +151,16 @@ body {
     background: white;
 }
 
+/* =========================
+   Responsive
+========================= */
 @media (max-width: 768px) {
-    .hamburger-menu { display: flex; }
+    .hamburger-menu {
+        display: flex;
+    }
 
     .nav-links {
-        display: none; 
+        display: none;
         position: absolute;
         top: 60px;
         left: 0;
@@ -134,14 +171,26 @@ body {
         text-align: center;
     }
 
-    .nav-links.active { display: flex; }
+    .nav-links.active {
+        display: flex;
+    }
 
-    .nav-links li { margin: 15px 0; }
-    .nav-links li a { margin: 0; }
+    .nav-links li {
+        margin: 15px 0;
+    }
+
+    .nav-links li a {
+        margin: 0;
+    }
 
     .pdf-card {
-        flex-direction: column; /* Stack image on top of text on mobile */
+        flex-direction: column;
         text-align: center;
-        gap: 20px;
+        gap: 22px;
+    }
+
+    .btns {
+        justify-content: center;
+        flex-wrap: wrap;
     }
 }
