@@ -62,7 +62,7 @@ body {
 }
 
 /* =========================
-   Container
+   Container (🔥 FIXED SPACING)
 ========================= */
 .container {
     max-width: 1200px;
@@ -70,6 +70,10 @@ body {
     margin: 40px auto;
     padding: 20px;
     min-height: 70vh;
+
+    display: flex;
+    flex-direction: column;
+    gap: 36px; /* 🔥 THIS FIXES CLOSE CONTENT */
 }
 
 /* =========================
@@ -84,6 +88,11 @@ body {
     padding: 30px;
     border-radius: 20px;
     border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* fallback safety */
+.pdf-card:not(:last-child) {
+    margin-bottom: 0;
 }
 
 .pdf-cover {
@@ -188,7 +197,7 @@ body {
 }
 
 /* =========================
-   Responsive + FINAL Mobile Typography Fix
+   Responsive (Mobile)
 ========================= */
 @media (max-width: 768px) {
 
@@ -231,7 +240,6 @@ body {
         flex-wrap: wrap;
     }
 
-    /* 🔥 FINAL Mobile Disclaimer Fix */
     .disclaimer-section {
         padding: 32px 14px;
         margin-top: 40px;
@@ -250,19 +258,15 @@ body {
         font-size: 18px;
         text-align: center;
         margin-bottom: 14px;
-        letter-spacing: 0.2px;
     }
 
     .disclaimer-content p {
         font-size: 14.5px;
         line-height: 1.75;
         color: #e5e7eb;
-
-        max-width: 38ch;           /* perfect mobile reading width */
-        margin: 0 auto 14px auto;  /* centered block */
+        max-width: 38ch;
+        margin: 0 auto 14px auto;
         text-align: left;
-
-        word-break: normal;
         hyphens: auto;
     }
 }
