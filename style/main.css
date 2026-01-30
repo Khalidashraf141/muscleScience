@@ -248,6 +248,7 @@ body {
     .pdf-card {
         flex-direction: column;
         text-align: center;
+        align-items: center;
         gap: 22px;
     }
 
@@ -294,3 +295,4 @@ body {
         max-width: 34ch;
     }
 }
+
