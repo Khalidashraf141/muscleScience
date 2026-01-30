@@ -1,119 +1,116 @@
-/* =========================
-   Global Reset
-========================= */
+/* ================= RESET ================= */
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    text-decoration: none;
+    box-sizing: border-box;
 }
 
 body {
     background: #0b1220;
     color: white;
     font-family: 'Segoe UI', Arial, sans-serif;
-    line-height: 1.6;
     overflow-x: hidden;
 }
 
-/* =========================
-   Navbar
-========================= */
+/* ================= NAVBAR ================= */
 .navbar {
-    background-color: #1e2431;
+    background: #1e2431;
     padding: 12px 20px;
     position: sticky;
     top: 0;
     z-index: 1000;
-    width: 100%;
 }
 
 .navdiv {
     max-width: 1200px;
     margin: auto;
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
 }
 
 .logo a {
+    color: white;
     font-size: 28px;
     font-weight: 700;
-    color: white;
-    white-space: nowrap;
+    text-decoration: none;
 }
 
 .nav-links {
-    display: flex;
     list-style: none;
+    display: flex;
 }
 
 .nav-links li a {
-    color: #cbd5e1;
-    font-size: 16px;
-    font-weight: 600;
     margin-left: 25px;
-    transition: color 0.3s ease;
-    white-space: nowrap;
+    color: #cbd5e1;
+    font-weight: 600;
+    text-decoration: none;
 }
 
 .nav-links li a:hover {
     color: white;
 }
 
-/* =========================
-   Container (🔥 FIXED SPACING)
-========================= */
+/* ================= CONTAINER ================= */
 .container {
     max-width: 1200px;
-    width: 100%;
     margin: 40px auto;
     padding: 20px;
-    min-height: 70vh;
-
     display: flex;
     flex-direction: column;
-    gap: 36px; /* 🔥 THIS FIXES CLOSE CONTENT */
+    gap: 36px;
 }
 
-/* =========================
-   PDF Card
-========================= */
+/* ================= PDF CARD (BASE) ================= */
 .pdf-card {
     display: flex;
-    align-items: center;
-    justify-content: center;
     gap: 40px;
     background: #1e2431;
     padding: 30px;
     border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255,255,255,0.06);
+    transition: transform .25s, box-shadow .25s;
 }
 
-/* fallback safety */
-.pdf-card:not(:last-child) {
-    margin-bottom: 0;
+.pdf-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 35px rgba(0,0,0,.45);
 }
 
 .pdf-cover {
     width: 160px;
     border-radius: 12px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.35);
-    flex-shrink: 0;
 }
 
 .pdf-info h3 {
     font-size: 26px;
-    margin-bottom: 6px;
 }
 
 .pdf-info p {
     color: #9ca3af;
 }
 
-/* =========================
-   Buttons
-========================= */
+/* ================= CARD TYPES ================= */
+.pdf-card.info { border-left: 5px solid #3b82f6; }
+.pdf-card.beginner { border-left: 5px solid #22c55e; }
+.pdf-card.intermediate { border-left: 5px solid #f59e0b; }
+
+/* ================= TAGS ================= */
+.pdf-tag {
+    display: inline-block;
+    padding: 4px 10px;
+    font-size: 12px;
+    font-weight: 700;
+    border-radius: 999px;
+    margin-bottom: 8px;
+}
+
+.tag-info { background:#1e3a8a; color:#93c5fd; }
+.tag-beginner { background:#14532d; color:#86efac; }
+.tag-intermediate { background:#78350f; color:#fcd34d; }
+
+/* ================= BUTTONS ================= */
 .btns {
     display: flex;
     gap: 15px;
@@ -125,21 +122,40 @@ body {
     border-radius: 8px;
     font-weight: 600;
     color: white;
+    text-decoration: none;
+}
+
+.read { background:#2563eb; }
+.download { background:#16a34a; }
+
+/* ================= HAMBURGER ================= */
+.hamburger-menu {
+    display: none;
+    background: none;
+    border: none;
     cursor: pointer;
-    transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
-.btn:hover {
-    transform: translateY(-2px);
-    opacity: 0.9;
+.bar {
+    width: 25px;
+    height: 3px;
+    background: white;
+    margin: 4px 0;
 }
 
-.read {
-    background: #2563eb;
+/* ================= DISCLAIMER ================= */
+.disclaimer-section {
+    padding: 50px 20px;
+    background: linear-gradient(180deg,#1e2431,#0b1220);
 }
 
-.download {
-    background: #16a34a;
+.disclaimer-content {
+    max-width: 900px;
+    margin: auto;
+    padding: 30px;
+    background: rgba(255,255,255,.04);
+    border-left: 5px solid #f59e0b;
+    border-radius: 16px;
 }
 
 /* =========================
