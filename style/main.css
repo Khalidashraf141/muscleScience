@@ -251,6 +251,10 @@ body {
         align-items: center;
         gap: 22px;
     }
+    .pdf-cover{
+        margin: 0 auto;
+        display: block;
+    }
 
     .btns {
         justify-content: center;
@@ -295,4 +299,5 @@ body {
         max-width: 34ch;
     }
 }
+
 
