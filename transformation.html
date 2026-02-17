@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fahad Ashraf - Elite Physique Transformation</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Orbitron:wght@400;700;900&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #ff6b35;
+            --secondary: #f7931e;
+            --dark: #0a0a0a;
+            --darker: #050505;
+            --card-bg: #111111;
+            --text: #e0e0e0;
+            --text-muted: #888888;
+            --success: #00d084;
+            --danger: #ff4757;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--darker);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* Animated Background */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(255, 107, 53, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(247, 147, 30, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 20%, rgba(255, 107, 53, 0.1) 0%, transparent 50%);
+            animation: bgPulse 8s ease-in-out infinite;
+        }
+        
+        @keyframes bgPulse {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+        
+        /* Container */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Header */
+        header {
+            text-align: center;
+            padding: 60px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .logo-text {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            font-weight: 300;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+        
+        .divider {
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--primary), transparent);
+            margin: 30px auto;
+        }
+        
+        /* Section Styling */
+        section {
+            margin-bottom: 50px;
+            animation: fadeInUp 0.8s ease-out;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        h2 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        h2::before {
+            content: '';
+            width: 4px;
+            height: 30px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+        
+        /* Cards */
+        .card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(255, 107, 53, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 107, 53, 0.1), transparent);
+            transition: left 0.5s;
+        }
+        
+        .card:hover::before {
+            left: 100%;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255, 107, 53, 0.3);
+            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.1);
+        }
+        
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .service-item {
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.1) 0%, rgba(247, 147, 30, 0.05) 100%);
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid var(--primary);
+            transition: all 0.3s ease;
+        }
+        
+        .service-item:hover {
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.2) 0%, rgba(247, 147, 30, 0.1) 100%);
+            transform: translateX(10px);
+        }
+        
+        .service-item h3 {
+            color: var(--secondary);
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+        
+        .service-item p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        
+        /* Process Steps */
+        .process-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .step {
+            display: flex;
+            align-items: start;
+            gap: 20px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .step-number {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+        
+        .step-content h3 {
+            color: var(--text);
+            margin-bottom: 5px;
+        }
+        
+        .step-content ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .step-content li {
+            color: var(--text-muted);
+            padding: 3px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .step-content li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--success);
+            font-weight: bold;
+        }
+        
+        /* Warning Box */
+        .warning-box {
+            background: linear-gradient(135deg, rgba(255, 71, 87, 0.1) 0%, rgba(255, 107, 53, 0.05) 100%);
+            border: 2px solid rgba(255, 71, 87, 0.3);
+            border-radius: 15px;
+            padding: 25px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .warning-box::before {
+            content: '⚠️';
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 2rem;
+            opacity: 0.3;
+        }
+        
+        .warning-box h3 {
+            color: var(--danger);
+            margin-bottom: 15px;
+            font-family: 'Orbitron', sans-serif;
+        }
+        
+        .warning-box p {
+            color: var(--text-muted);
+            margin-bottom: 10px;
+        }
+        
+        .warning-box strong {
+            color: var(--danger);
+        }
+        
+        /* Pricing Cards */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .pricing-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(255, 107, 53, 0.3);
+        }
+        
+        .pricing-card.featured {
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.2) 0%, rgba(247, 147, 30, 0.1) 100%);
+            border: 2px solid var(--primary);
+            transform: scale(1.05);
+        }
+        
+        .pricing-card.featured:hover {
+            transform: scale(1.05) translateY(-10px);
+        }
+        
+        .pricing-card.featured::after {
+            content: 'POPULAR';
+            position: absolute;
+            top: -12px;
+            right: 20px;
+            background: var(--primary);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        
+        .plan-name {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.3rem;
+            color: var(--text);
+            margin-bottom: 10px;
+        }
+        
+        .plan-duration {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+        
+        .price {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+        }
+        
+        .price span {
+            font-size: 1rem;
+            color: var(--text-muted);
+            -webkit-text-fill-color: var(--text-muted);
+        }
+        
+        .features-list {
+            list-style: none;
+            text-align: left;
+            margin: 20px 0;
+        }
+        
+        .features-list li {
+            padding: 8px 0;
+            color: var(--text-muted);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .features-list li::before {
+            content: '→';
+            color: var(--primary);
+            margin-right: 10px;
+        }
+        
+        /* VIP Special Styling */
+        .vip-card {
+            background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+            border: 2px solid transparent;
+            background-clip: padding-box;
+            position: relative;
+        }
+        
+        .vip-card::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary), var(--primary));
+            border-radius: 20px;
+            z-index: -1;
+            animation: borderRotate 3s linear infinite;
+        }
+        
+        @keyframes borderRotate {
+            0% { filter: hue-rotate(0deg); }
+            100% { filter: hue-rotate(360deg); }
+        }
+        
+        .vip-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 5px 20px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.1) 0%, transparent 100%);
+            border-radius: 20px;
+            margin-top: 50px;
+        }
+        
+        .cta-section h2 {
+            justify-content: center;
+        }
+        
+        .cta-section h2::before {
+            display: none;
+        }
+        
+        .contact-info {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            margin: 20px 0;
+        }
+        
+        .highlight {
+            color: var(--primary);
+            font-weight: 600;
+        }
+        
+        /* Download Button */
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 18px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.3);
+            margin-top: 30px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .download-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s;
+        }
+        
+        .download-btn:hover::before {
+            left: 100%;
+        }
+        
+        .download-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(255, 107, 53, 0.4);
+        }
+        
+        .download-btn svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+        }
+        
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--text-muted);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 50px;
+        }
+        
+        .social-links {
+            margin: 20px 0;
+        }
+        
+        .social-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: var(--primary);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .logo-text {
+                font-size: 2rem;
+            }
+            
+            .pricing-card.featured {
+                transform: scale(1);
+            }
+            
+            .pricing-card.featured:hover {
+                transform: scale(1) translateY(-10px);
+            }
+            
+            h2 {
+                font-size: 1.4rem;
+            }
+        }
+        
+        /* Print Styles */
+        @media print {
+            .download-btn, .bg-animation {
+                display: none;
+            }
+            
+            body {
+                background: white;
+                color: black;
+            }
+            
+            .card {
+                border: 1px solid #ddd;
+                break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-animation"></div>
+    
+    <div class="container">
+        <header>
+            <h1 class="logo-text">Fahad Ashraf</h1>
+            <p class="tagline">Elite Physique Transformation Specialist</p>
+            <div class="divider"></div>
+        </header>
+
+        <section id="about">
+            <div class="card">
+                <h2>About Me</h2>
+                <p style="font-size: 1.1rem; line-height: 1.8; color: var(--text-muted);">
+                    Main Fahad Ashraf, aapki body transformation journey ka trusted partner. Mere paas extensive experience hai 
+                    <span class="highlight">advanced fitness coaching, nutrition planning, aur performance enhancement</span> mein. 
+                    Chahe aap beginner ho ya experienced athlete, main aapke specific goals ke according 
+                    <span class="highlight">customized solutions</span> provide karta hoon.
+                </p>
+            </div>
+        </section>
+
+        <section id="services">
+            <h2>Coaching Services</h2>
+            <div class="services-grid">
+                <div class="service-item">
+                    <h3>🔥 Fat / Weight Loss</h3>
+                    <p>Caloric deficit planning, cardio protocols, metabolic conditioning</p>
+                </div>
+                <div class="service-item">
+                    <h3>💪 Lean Muscle Gain</h3>
+                    <p>Clean bulking strategies, nutrient timing, body recomposition</p>
+                </div>
+                <div class="service-item">
+                    <h3>🏋️ Muscle Building</h3>
+                    <p>Hypertrophy-focused training, progressive overload, recovery optimization</p>
+                </div>
+                <div class="service-item">
+                    <h3>⚗️ Steroid Cycle Planning</h3>
+                    <p>Harm-reduction based protocols, blood work monitoring, compound selection</p>
+                </div>
+                <div class="service-item">
+                    <h3>🥗 Diet & Workout Planning</h3>
+                    <p>Macro calculations, meal timing, periodized training splits</p>
+                </div>
+                <div class="service-item">
+                    <h3>🔄 PCT Guidance</h3>
+                    <p>Recovery protocols, HPTA restoration, health marker monitoring</p>
+                </div>
+                <div class="service-item" style="grid-column: 1 / -1;">
+                    <h3>🧬 Peptide-Based Protocols</h3>
+                    <p>Growth hormone secretagogues, healing peptides, performance optimization</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="process">
+            <h2>Coaching Process</h2>
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Initial Assessment</h3>
+                        <ul>
+                            <li>Goal analysis & body composition evaluation</li>
+                            <li>Experience level & training history review</li>
+                            <li>Budget & lifestyle considerations</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Custom Plan Design</h3>
+                        <ul>
+                            <li>Personalized Diet Plan (macro/micro calculated)</li>
+                            <li>Structured Workout / Training Split</li>
+                            <li>Evidence-based Supplement Guidance</li>
+                            <li>Steroid Cycle & PCT Planning (guidance only)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Ongoing Support</h3>
+                        <ul>
+                            <li>Regular progress tracking</li>
+                            <li>Plan adjustments based on feedback</li>
+                            <li>24/7 query resolution</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="disclaimer">
+            <div class="warning-box">
+                <h3>⚠️ Important Medical Disclaimer</h3>
+                <p><strong>Steroid use involves inherent health risks.</strong> Main sirf <strong>harm-reduction based educational guidance</strong> provide karta hoon:</p>
+                <p>✓ Proper planning aur monitoring protocols<br>
+                   ✓ Blood work interpretation<br>
+                   ✓ Side effect management strategies<br>
+                   ✓ <strong>NO unsafe recommendations or unrealistic promises</strong></p>
+                <p style="margin-top: 15px; font-style: italic; border-top: 1px solid rgba(255,71,87,0.3); padding-top: 15px;">
+                    Client safety is my #1 priority. Illegal substance procurement advice nahi di jaati.
+                </p>
+            </div>
+        </section>
+
+        <section id="pricing">
+            <h2>Investment Plans</h2>
+            
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="plan-name">Starter Plan</div>
+                    <div class="plan-duration">One-time Payment</div>
+                    <div class="price">₹500</div>
+                    <ul class="features-list">
+                        <li>Single personalized blueprint</li>
+                        <li>Diet & workout structure</li>
+                        <li>Supplement recommendations</li>
+                        <li>Self-guided execution</li>
+                    </ul>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 15px;">
+                        Best for: Self-motivated individuals
+                    </p>
+                </div>
+
+                <div class="pricing-card">
+                    <div class="plan-name">Monthly Guidance</div>
+                    <div class="plan-duration">1 Month</div>
+                    <div class="price">₹1,000</div>
+                    <ul class="features-list">
+                        <li>Weekly check-ins</li>
+                        <li>Plan adjustments</li>
+                        <li>Progress tracking</li>
+                        <li>Email/WhatsApp support</li>
+                    </ul>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 15px;">
+                        Best for: Short-term goals
+                    </p>
+                </div>
+
+                <div class="pricing-card">
+                    <div class="plan-name">Quarterly Transformation</div>
+                    <div class="plan-duration">3 Months</div>
+                    <div class="price">₹2,500</div>
+                    <ul class="features-list">
+                        <li>Complete 12-week overhaul</li>
+                        <li>Bi-weekly consultations</li>
+                        <li>Advanced periodization</li>
+                        <li>Priority support</li>
+                    </ul>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 15px;">
+                        Best for: Serious beginners
+                    </p>
+                </div>
+            </div>
+
+            <div class="pricing-card vip-card" style="margin-top: 40px; max-width: 600px; margin-left: auto; margin-right: auto;">
+                <div class="vip-badge">🔥 VIP Elite Coaching</div>
+                <div class="plan-duration">Monthly Subscription</div>
+                <div class="price">₹2,000<span>/month</span></div>
+                <ul class="features-list" style="text-align: center;">
+                    <li>✓ Weekly Diet Updates — Real-time macro adjustments</li>
+                    <li>✓ Training & Progress Review — Form checks & plateau breaking</li>
+                    <li>✓ Weekend Voice/Video Calls — 30 mins 1-on-1 consultation</li>
+                    <li>✓ Regular Check-ins — Daily accountability via WhatsApp</li>
+                    <li>✓ Priority Support — Instant responses, emergency guidance</li>
+                </ul>
+                <p style="color: var(--secondary); font-weight: 600; margin-top: 20px;">
+                    Ideal for: Competitive athletes & rapid transformations
+                </p>
+            </div>
+        </section>
+
+        <section id="contact" class="cta-section">
+            <h2>Start Your Transformation</h2>
+            <p class="contact-info">
+                Serious inquiries only. Share your details:
+            </p>
+            <div style="text-align: left; max-width: 600px; margin: 30px auto; background: rgba(255,255,255,0.03); padding: 30px; border-radius: 15px;">
+                <p style="margin-bottom: 15px; color: var(--text);"><span class="highlight">1.</span> Your Primary Goal <em style="color: var(--text-muted);">(Fat loss / Muscle gain / Recomposition)</em></p>
+                <p style="margin-bottom: 15px; color: var(--text);"><span class="highlight">2.</span> Current Experience Level <em style="color: var(--text-muted);">(Beginner / Intermediate / Advanced)</em></p>
+                <p style="margin-bottom: 15px; color: var(--text);"><span class="highlight">3.</span> Monthly Budget <em style="color: var(--text-muted);">(For package recommendation)</em></p>
+                <p style="color: var(--text);"><span class="highlight">4.</span> Medical History <em style="color: var(--text-muted);">(Previous cycles/conditions)</em></p>
+            </div>
+            
+            <button class="download-btn" onclick="downloadPDF()">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 16l-4-4h3V4h2v8h3l-4 4zm-6 2v2h12v-2H6z"/>
+                </svg>
+                Download Service Catalog (PDF)
+            </button>
+            
+            <p style="margin-top: 30px; color: var(--text-muted); font-style: italic;">
+                "Transformations require commitment. Agar aap dedicated ho apne goals ko leke, 
+                toh main dedicated hoon aapki success ke liye."
+            </p>
+        </section>
+
+        <footer>
+            <p style="font-family: 'Orbitron', sans-serif; font-size: 1.5rem; color: var(--primary); margin-bottom: 10px;">
+                FAHAD ASHRAF
+            </p>
+            <p>Elite Physique Transformation Specialist</p>
+            <div class="social-links">
+                <a href="#">📱</a>
+                <a href="#">📧</a>
+                <a href="#">💬</a>
+            </div>
+            <p style="font-size: 0.9rem; margin-top: 20px;">
+                © 2024 Fahad Ashraf Coaching. All rights reserved.
+            </p>
+        </footer>
+    </div>
+
+    <script>
+        function downloadPDF() {
+            // Create a new window with print-friendly content
+            const printWindow = window.open('', '_blank');
+            
+            const content = `
+                <!DOCTYPE html>
+                <html>
+                <head>
+                    <title>Fahad Ashraf - Coaching Services</title>
+                    <style>
+                        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 40px; }
+                        h1 { color: #ff6b35; text-align: center; border-bottom: 3px solid #ff6b35; padding-bottom: 20px; }
+                        h2 { color: #ff6b35; margin-top: 30px; border-left: 4px solid #ff6b35; padding-left: 15px; }
+                        .header { text-align: center; margin-bottom: 40px; }
+                        .tagline { color: #666; font-size: 1.2rem; }
+                        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+                        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+                        th { background: #ff6b35; color: white; }
+                        .price { font-size: 1.5rem; color: #ff6b35; font-weight: bold; }
+                        .vip { background: #fff3e0; border: 2px solid #ff6b35; padding: 20px; margin: 20px 0; border-radius: 10px; }
+                        .warning { background: #ffebee; border: 2px solid #f44336; padding: 20px; margin: 20px 0; border-radius: 10px; }
+                        ul { padding-left: 20px; }
+                        li { margin: 8px 0; }
+                        .footer { text-align: center; margin-top: 50px; padding-top: 20px; border-top: 2px solid #eee; color: #666; }
+                        @media print { body { print-color-adjust: exact; -webkit-print-color-adjust: exact; } }
+                    </style>
+                </head>
+                <body>
+                    <div class="header">
+                        <h1>FAHAD ASHRAF</h1>
+                        <p class="tagline">Elite Physique Transformation Specialist</p>
+                    </div>
+
+                    <h2>About</h2>
+                    <p>Professional fitness coach specializing in body transformation, muscle building, fat loss, and advanced performance enhancement protocols including harm-reduction based PED guidance.</p>
+
+                    <h2>Services Offered</h2>
+                    <ul>
+                        <li><strong>Fat / Weight Loss</strong> — Caloric deficit planning, cardio protocols</li>
+                        <li><strong>Lean Muscle Gain</strong> — Clean bulking, nutrient timing</li>
+                        <li><strong>Muscle Building</strong> — Hypertrophy training, progressive overload</li>
+                        <li><strong>Steroid Cycle Planning</strong> — Harm-reduction protocols, monitoring</li>
+                        <li><strong>Diet & Workout Planning</strong> — Macro calculations, periodized splits</li>
+                        <li><strong>PCT Guidance</strong> — Recovery protocols, HPTA restoration</li>
+                        <li><strong>Peptide Protocols</strong> — GH secretagogues, healing peptides</li>
+                    </ul>
+
+                    <h2>Pricing Packages</h2>
+                    <table>
+                        <tr>
+                            <th>Plan</th>
+                            <th>Duration</th>
+                            <th>Investment</th>
+                            <th>Includes</th>
+                        </tr>
+                        <tr>
+                            <td>Starter</td>
+                            <td>One-time</td>
+                            <td class="price">₹500</td>
+                            <td>Personalized blueprint, diet & workout structure</td>
+                        </tr>
+                        <tr>
+                            <td>Monthly</td>
+                            <td>1 Month</td>
+                            <td class="price">₹1,000</td>
+                            <td>Weekly check-ins, plan adjustments, support</td>
+                        </tr>
+                        <tr>
+                            <td>Quarterly</td>
+                            <td>3 Months</td>
+                            <td class="price">₹2,500</td>
+                            <td>12-week overhaul, bi-weekly consultations</td>
+                        </tr>
+                    </table>
+
+                    <div class="vip">
+                        <h2 style="margin-top: 0; border: none; padding: 0;">🔥 VIP ELITE COACHING — ₹2,000/month</h2>
+                        <ul>
+                            <li>Weekly Diet Updates & Real-time adjustments</li>
+                            <li>Training & Progress Review (Form checks)</li>
+                            <li>Weekend Voice/Video Calls (30 mins)</li>
+                            <li>Daily Accountability & Priority Support</li>
+                        </ul>
+                        <p><strong>Best for:</strong> Competitive athletes & rapid transformations</p>
+                    </div>
+
+                    <div class="warning">
+                        <h3 style="color: #d32f2f; margin-top: 0;">⚠️ Medical Disclaimer</h3>
+                        <p>Steroid use involves health risks. I provide only harm-reduction based educational guidance including proper planning, blood work interpretation, and side effect management. No unsafe recommendations or illegal procurement advice. Client safety is priority #1.</p>
+                    </div>
+
+                    <h2>How to Start</h2>
+                    <p>Share your goal, experience level, budget, and medical history for a customized plan design.</p>
+                    <p><strong>Contact:</strong> [Your WhatsApp/Email Here]</p>
+                    <p style="color: #666; font-style: italic;">Serious clients only. Transformations require commitment.</p>
+
+                    <div class="footer">
+                        <p><strong>Fahad Ashraf</strong><br>
+                        Elite Physique Transformation Specialist</p>
+                        <p>© 2024 All Rights Reserved</p>
+                    </div>
+
+                    <script>
+                        window.onload = function() {
+                            setTimeout(function() {
+                                window.print();
+                            }, 500);
+                        };
+                    <\/script>
+                </body>
+                </html>
+            `;
+            
+            printWindow.document.write(content);
+            printWindow.document.close();
+        }
+        
+        // Add smooth scrolling animation on load
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.card, .pricing-card, .service-item');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            });
+            
+            cards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'all 0.6s ease-out';
+                observer.observe(card);
+            });
+        });
+    </script>
+</body>
+</html>
