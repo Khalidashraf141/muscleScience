@@ -3,121 +3,196 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AnabolicDoc</title>
-    <link rel="stylesheet" href="style/main.css">
-    <link rel="icon" type="images/x-icon" href="images/favicon.ico">
+
+<!-- SEO Title -->
+<title>AnabolicDoc | Steroid Cycles, PCT Guides & Anabolic Education</title>
+
+<!-- SEO Meta Tags -->
+<meta name="description" content="AnabolicDoc provides educational steroid cycle guides, PCT protocols, and anabolic research. Download free PDFs on bulking, cutting, and post-cycle therapy.">
+<meta name="keywords" content="steroid cycles, PCT, post cycle therapy, bulking cycle, cutting cycle, MK-677, testosterone, bodybuilding guides">
+<meta name="author" content="AnabolicDoc">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<link rel="canonical" href="https://www.anabolicdoc.com/">
+
+<!-- Open Graph (Facebook/LinkedIn) -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.anabolicdoc.com/">
+<meta property="og:title" content="AnabolicDoc - Steroid Cycle Guides & PCT Protocols">
+<meta property="og:description" content="Free educational guides on anabolic steroid cycles, post-cycle therapy, and performance enhancement research.">
+<meta property="og:image" content="https://www.anabolicdoc.com/images/og-image.jpg">
+<meta property="og:site_name" content="AnabolicDoc">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AnabolicDoc - Steroid Cycle Guides">
+<meta name="twitter:description" content="Download free PDF guides on bulking cycles, cutting cycles, and post-cycle therapy protocols.">
+<meta name="twitter:image" content="https://www.anabolicdoc.com/images/twitter-card.jpg">
+
+<!-- Favicon & Icons -->
+<link rel="icon" type="image/x-icon" href="images/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+
+<!-- Preconnect for Performance -->
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+
+<!-- Stylesheet -->
+<link rel="stylesheet" href="style/main.css">
+
+<!-- Structured Data - Organization -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "AnabolicDoc",
+  "url": "https://www.anabolicdoc.com",
+  "logo": "https://www.anabolicdoc.com/images/logo.png",
+  "description": "Educational resource for anabolic steroid cycles and post-cycle therapy protocols"
+}
+</script>
+
+<!-- Structured Data - WebSite -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "AnabolicDoc",
+  "url": "https://www.anabolicdoc.com"
+}
+</script>
+
+<!-- Structured Data - MedicalWebPage -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MedicalWebPage",
+  "name": "Anabolic Steroid Cycle Guides",
+  "description": "Educational guides on steroid cycles, PCT, and anabolic protocols",
+  "lastReviewed": "2024-01-15",
+  "reviewedBy": {
+    "@type": "Organization",
+    "name": "AnabolicDoc Medical Team"
+  }
+}
+</script>
+
 </head>
 
 <body>
 
+<!-- Skip Link for Accessibility -->
+<a href="#main-content" style="position:absolute;left:-9999px;z-index:999;">Skip to main content</a>
+
 <!-- ================= NAVBAR ================= -->
-<nav class="navbar">
+<nav class="navbar" role="navigation" aria-label="Main navigation">
     <div class="navdiv">
         <div class="logo"><a href="#">AnabolicDoc</a></div>
 
-        <button class="hamburger-menu" id="hamburgerBtn">
+        <button class="hamburger-menu" id="hamburgerBtn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks">
             <span class="bar"></span>
             <span class="bar"></span>
             <span class="bar"></span>
         </button>
 
-        <ul class="nav-links" id="navLinks">
-            <li><a href="#">Profile</a></li>
-            <li><a href="#">Contents</a></li>
-            <li><a href="transformation.html?v=2">Transformation Plan</a></li>
-            <li><a href="#">Contact Us</a></li>
+        <ul class="nav-links" id="navLinks" role="menubar">
+            <li role="none"><a href="#" role="menuitem">Profile</a></li>
+            <li role="none"><a href="#" role="menuitem">Contents</a></li>
+            <li role="none"><a href="transformation.html?v=2" role="menuitem">Transformation Plan</a></li>
+            <li role="none"><a href="#" role="menuitem">Contact Us</a></li>
         </ul>
     </div>
 </nav>
 
 <!-- ================= CONTENT ================= -->
-<div class="container">
+<main id="main-content" class="container" role="main">
 
     <!-- INFO -->
     <div class="pdf-card info">
-        <img src="covers/OCT.jpg" class="pdf-cover">
+        <img src="covers/OCT.jpg" class="pdf-cover" alt="Off Cycle Therapy OCT guide cover" loading="lazy" width="160" height="auto">
         <div class="pdf-info">
             <span class="pdf-tag tag-info">INFO</span>
             <h3>OCT</h3>
             <p>Off Cycle Therapy</p>
             <div class="btns">
-                <a href="pdfs/OCT.pdf" target="_blank" class="btn read">📖 Read</a>
-                <a href="pdfs/OCT.pdf" download class="btn download">⬇ Download</a>
+                <a href="pdfs/OCT.pdf" target="_blank" class="btn read" rel="noopener noreferrer">📖 Read</a>
+                <a href="pdfs/OCT.pdf" download class="btn download" rel="noopener noreferrer">⬇ Download</a>
             </div>
         </div>
     </div>
 
     <!-- INFO -->
     <div class="pdf-card info">
-        <img src="covers/MK677.png" class="pdf-cover">
+        <img src="covers/MK677.png" class="pdf-cover" alt="MK-677 Ibutamoren complete guide cover" loading="lazy" width="160" height="auto">
         <div class="pdf-info">
             <span class="pdf-tag tag-info">INFO</span>
             <h3>MK-677</h3>
             <p>Ibutamoren – Complete Guide</p>
             <div class="btns">
-                <a href="pdfs/MK-667.pdf" target="_blank" class="btn read">📖 Read</a>
-                <a href="pdfs/MK-667.pdf" download class="btn download">⬇ Download</a>
+                <a href="pdfs/MK-667.pdf" target="_blank" class="btn read" rel="noopener noreferrer">📖 Read</a>
+                <a href="pdfs/MK-667.pdf" download class="btn download" rel="noopener noreferrer">⬇ Download</a>
             </div>
         </div>
     </div>
 
     <!-- BEGINNER -->
     <div class="pdf-card beginner">
-        <img src="covers/cuttingBegineerCycle.jpg" class="pdf-cover">
+        <img src="covers/cuttingBegineerCycle.jpg" class="pdf-cover" alt="Beginner cutting steroid cycle protocol guide" loading="lazy" width="160" height="auto">
         <div class="pdf-info">
             <span class="pdf-tag tag-beginner">BEGINNER</span>
             <h3>Cutting Beginner Cycle</h3>
             <p>Cycle Protocol</p>
             <div class="btns">
-                <a href="pdfs/CuttingBeginnerCycle.pdf" target="_blank" class="btn read">📖 Read</a>
-                <a href="pdfs/CuttingBeginnerCycle.pdf" download class="btn download">⬇ Download</a>
+                <a href="pdfs/CuttingBeginnerCycle.pdf" target="_blank" class="btn read" rel="noopener noreferrer">📖 Read</a>
+                <a href="pdfs/CuttingBeginnerCycle.pdf" download class="btn download" rel="noopener noreferrer">⬇ Download</a>
             </div>
         </div>
     </div>
 
     <!-- BEGINNER -->
     <div class="pdf-card beginner">
-        <img src="covers/bulkingcycleCover.png" class="pdf-cover">
+        <img src="covers/bulkingcycleCover.png" class="pdf-cover" alt="Beginner bulking cycle Testosterone Dianabol guide" loading="lazy" width="160" height="auto">
         <div class="pdf-info">
             <span class="pdf-tag tag-beginner">BEGINNER</span>
             <h3>Bulking Cycle</h3>
             <p>Test E + Dianabol</p>
             <div class="btns">
-                <a href="pdfs/BULKINGCYCLE.pdf" target="_blank" class="btn read">📖 Read</a>
-                <a href="pdfs/BULKINGCYCLE.pdf" download class="btn download">⬇ Download</a>
+                <a href="pdfs/BULKINGCYCLE.pdf" target="_blank" class="btn read" rel="noopener noreferrer">📖 Read</a>
+                <a href="pdfs/BULKINGCYCLE.pdf" download class="btn download" rel="noopener noreferrer">⬇ Download</a>
             </div>
         </div>
     </div>
 
     <!-- INTERMEDIATE -->
     <div class="pdf-card intermediate">
-        <img src="covers/bulkingcycle.png" class="pdf-cover">
+        <img src="covers/bulkingcycle.png" class="pdf-cover" alt="Intermediate bulking cycle Testosterone Deca Durabolin guide" loading="lazy" width="160" height="auto">
         <div class="pdf-info">
             <span class="pdf-tag tag-intermediate">INTERMEDIATE</span>
             <h3>Intermediate Bulking Cycle</h3>
             <p>Test E + Dbol + Deca</p>
             <div class="btns">
-                <a href="pdfs/Intermediate Bulking Cycle.pdf" target="_blank" class="btn read">📖 Read</a>
-                <a href="pdfs/Intermediate Bulking Cycle.pdf" download class="btn download">⬇ Download</a>
+                <a href="pdfs/Intermediate Bulking Cycle.pdf" target="_blank" class="btn read" rel="noopener noreferrer">📖 Read</a>
+                <a href="pdfs/Intermediate Bulking Cycle.pdf" download class="btn download" rel="noopener noreferrer">⬇ Download</a>
             </div>
         </div>
     </div>
 
-        <!-- INTERMEDIATE -->
+    <!-- INTERMEDIATE -->
     <div class="pdf-card intermediate">
-        <img src="covers/Intermediate Cutting Cycle.jpg" class="pdf-cover">
+        <img src="covers/Intermediate Cutting Cycle.jpg" class="pdf-cover" alt="Intermediate cutting cycle advanced fat loss protocol" loading="lazy" width="160" height="auto">
         <div class="pdf-info">
             <span class="pdf-tag tag-intermediate">INTERMEDIATE</span>
             <h3>Intermediate Cutting Cycle</h3>
             <p>Advanced Fat Loss Protocol</p>
             <div class="btns">
-                <a href="pdfs/Intermediate Cutting Cycle.pdf" target="_blank" class="btn read">📖 Read</a>
-                <a href="pdfs/Intermediate Cutting Cycle.pdf" download class="btn download">⬇ Download</a>
+                <a href="pdfs/Intermediate Cutting Cycle.pdf" target="_blank" class="btn read" rel="noopener noreferrer">📖 Read</a>
+                <a href="pdfs/Intermediate Cutting Cycle.pdf" download class="btn download" rel="noopener noreferrer">⬇ Download</a>
             </div>
         </div>
     </div>
 
-</div>
+</main>
 
 <!-- ================= DISCLAIMER ================= -->
 <div class="disclaimer-section">
@@ -128,17 +203,23 @@
     </div>
 </div>
 
+<!-- ================= FOOTER ================= -->
+<footer style="padding:30px 20px;text-align:center;background:#0b1220;color:#9ca3af;font-size:14px;border-top:1px solid rgba(255,255,255,0.06);margin-top:40px;">
+    <p>&copy; 2026 AnabolicDoc. Educational purposes only. | <a href="/privacy" style="color:#3b82f6;">Privacy</a> | <a href="/terms" style="color:#3b82f6;">Terms</a> | <a href="/sitemap.xml" style="color:#3b82f6;">Sitemap</a></p>
+</footer>
+
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         const hamburgerBtn = document.getElementById('hamburgerBtn');
         const navLinks = document.getElementById('navLinks');
 
-        // Add a click listener to the button
         hamburgerBtn.addEventListener('click', function() {
-            // This toggles the 'active' class on the navigation links
+            const isExpanded = this.getAttribute('aria-expanded') === 'true';
+            this.setAttribute('aria-expanded', !isExpanded);
             navLinks.classList.toggle('active');
         });
     });
 </script>
+
 </body>
 </html>
