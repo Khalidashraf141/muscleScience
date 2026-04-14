@@ -109,7 +109,7 @@ body {
 .tag-info { background:#1e3a8a; color:#93c5fd; }
 .tag-beginner { background:#14532d; color:#86efac; }
 .tag-intermediate { background:#78350f; color:#fcd34d; }
-.tag-advance{color:#FF2C2C;}
+.tag-advance{background:#FF7F7F;color:#FF2C2C;}
 /* ================= BUTTONS ================= */
 .btns {
     display: flex;
