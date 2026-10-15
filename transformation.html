@@ -1,296 +1,541 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fahad Ashraf - Elite Physique Transformation</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Orbitron:wght@400;700;900&display=swap');
-        
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        :root {
-            --primary: #ff6b35;
-            --secondary: #f7931e;
-            --dark: #0a0a0a;
-            --darker: #050505;
-            --card-bg: #111111;
-            --text: #e0e0e0;
-            --text-muted: #888888;
-            --success: #00d084;
-            --danger: #ff4757;
-        }
-        body { font-family: 'Inter', sans-serif; background: var(--darker); color: var(--text); line-height: 1.6; overflow-x: hidden; }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b0c0f">
+  <meta name="description" content="Personalized fitness coaching by Fahad Ashraf. Explore structured training, nutrition guidance, progress reviews, and online coaching packages.">
+  <title>Fahad Ashraf | Fitness & Physique Coaching</title>
 
-        /* Animated Background */
-        .bg-animation { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; background: radial-gradient(circle at 20% 50%, rgba(255,107,53,0.15) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(247,147,30,0.1) 0%, transparent 50%), radial-gradient(circle at 40% 20%, rgba(255,107,53,0.1) 0%, transparent 50%); animation: bgPulse 8s ease-in-out infinite; }
-        @keyframes bgPulse { 0%,100%{opacity:.5}50%{opacity:1} }
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-        .container { max-width: 1000px; margin: 0 auto; padding: 20px; }
-        header { text-align: center; padding: 60px 20px; position: relative; overflow: hidden; }
-        .logo-text { font-family: 'Orbitron', sans-serif; font-size: 3rem; font-weight: 900; background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; letter-spacing: 2px; margin-bottom: 10px; text-transform: uppercase; }
-        .tagline { font-size: 1.2rem; color: var(--text-muted); font-weight: 300; letter-spacing: 3px; text-transform: uppercase; }
-        .divider { width: 100px; height: 3px; background: linear-gradient(90deg, transparent, var(--primary), transparent); margin: 30px auto; }
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #0b0c0f;
+      --bg-soft: #111318;
+      --surface: rgba(22, 24, 30, 0.88);
+      --surface-strong: #171a20;
+      --text: #f4f5f7;
+      --muted: #a0a5b0;
+      --line: rgba(255, 255, 255, 0.09);
+      --accent: #ff7139;
+      --accent-2: #ffad48;
+      --green: #25d366;
+      --radius: 20px;
+      --max-width: 1160px;
+      --shadow: 0 24px 70px rgba(0, 0, 0, 0.28);
+    }
 
-        /* Sections/cards (kept unchanged) */
-        section { margin-bottom: 50px; animation: fadeInUp 0.8s ease-out; }
-        @keyframes fadeInUp { from{opacity:0;transform:translateY(30px)} to{opacity:1;transform:translateY(0)} }
-        h2{ font-family:'Orbitron',sans-serif;font-size:1.8rem;color:var(--primary);margin-bottom:25px;display:flex;align-items:center;gap:10px;text-transform:uppercase;letter-spacing:1px }
-        h2::before{ content:'';width:4px;height:30px;background:var(--primary);border-radius:2px }
-        .card{ background:var(--card-bg);border-radius:15px;padding:30px;margin-bottom:20px;border:1px solid rgba(255,107,53,0.1);transition:all .3s ease;position:relative;overflow:hidden }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 92px; }
+    body {
+      margin: 0;
+      min-width: 320px;
+      background:
+        radial-gradient(ellipse at 15% 4%, rgba(255, 113, 57, 0.13), transparent 34rem),
+        radial-gradient(ellipse at 88% 36%, rgba(255, 173, 72, 0.07), transparent 30rem),
+        var(--bg);
+      color: var(--text);
+      font-family: "DM Sans", Arial, sans-serif;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
 
-        /* ... rest of styles unchanged (omitted here for brevity in editor) ... */
+    a { color: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    a:focus-visible, button:focus-visible { outline: 3px solid var(--accent-2); outline-offset: 4px; }
+    img, svg { display: block; }
+    .container { width: min(var(--max-width), calc(100% - 40px)); margin-inline: auto; }
+    .section { padding-block: 82px; }
+    .section-heading { max-width: 720px; margin-bottom: 32px; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin: 0 0 14px;
+      color: var(--accent-2);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+    .eyebrow::before { content: ""; width: 24px; height: 2px; background: var(--accent); }
+    h1, h2, h3, p { margin-top: 0; }
+    h1, h2, h3 { font-family: "Space Grotesk", "DM Sans", sans-serif; line-height: 1.15; }
+    h2 { margin-bottom: 14px; font-size: clamp(1.9rem, 4vw, 2.75rem); letter-spacing: -0.04em; }
+    h3 { margin-bottom: 10px; font-size: 1.18rem; }
+    .section-intro { max-width: 680px; color: var(--muted); margin-bottom: 0; }
+    .accent-text { color: var(--accent-2); }
 
-        /* Top Socials - premium look */
-        .top-socials { position: fixed; top: 20px; right: 20px; display: flex; align-items: center; gap: 12px; z-index: 30; padding: 8px; border-radius: 999px; background: rgba(10,10,10,0.5); border: 1px solid rgba(255,255,255,0.04); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); box-shadow: 0 8px 30px rgba(0,0,0,0.45); }
-        .top-socials a { width:44px; height:44px; display:inline-flex; align-items:center; justify-content:center; color:#fff; text-decoration:none; border-radius:50%; transition:transform .2s ease, box-shadow .2s ease; box-shadow: 0 6px 18px rgba(0,0,0,0.45); }
-        .top-socials a.wa-btn { background: linear-gradient(135deg,#25D366 0%, #06b33b 100%); }
-        .top-socials a.ig-btn { background: radial-gradient(circle at 30% 30%, #feda75 0%, #f58529 25%, #dd2a7b 50%, #8134af 75%, #515bd4 100%); }
-        .top-socials a:hover { transform: translateY(-3px) scale(1.06); box-shadow: 0 12px 30px rgba(0,0,0,0.5); }
-        .top-socials svg { width:20px; height:20px; fill: #fff; filter: drop-shadow(0 2px 6px rgba(0,0,0,0.3)); }
+    /* Header and navigation */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      background: rgba(11, 12, 15, 0.84);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+    .nav-wrap { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; font-family: "Space Grotesk", sans-serif; font-size: 1rem; font-weight: 700; letter-spacing: 0.01em; }
+    .brand-mark {
+      display: grid; width: 40px; height: 40px; place-items: center; border-radius: 13px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2)); color: #15110f;
+      font-size: 0.9rem; font-weight: 700; box-shadow: 0 8px 25px rgba(255, 113, 57, 0.18);
+    }
+    .nav-links { display: flex; align-items: center; gap: 26px; }
+    .nav-links a { color: var(--muted); font-size: 0.9rem; font-weight: 600; text-decoration: none; transition: color .2s ease; }
+    .nav-links a:hover { color: var(--text); }
+    .nav-links .nav-cta { color: var(--text); }
+    .menu-toggle { display: none; border: 1px solid var(--line); background: var(--surface-strong); color: var(--text); border-radius: 12px; width: 44px; height: 44px; font-size: 1.3rem; cursor: pointer; }
 
-        /* Footer social buttons updated to match premium style */
-        .social-links { margin: 20px 0; display:flex; justify-content:center; align-items:center; gap:12px; }
-        .social-links a { width:46px; height:46px; display:inline-flex; align-items:center; justify-content:center; border-radius:50%; color:#fff; text-decoration:none; transition:transform .2s ease, box-shadow .2s ease; box-shadow:0 6px 18px rgba(0,0,0,0.35); }
-        .social-links a.wa-btn { background: linear-gradient(135deg,#25D366 0%, #06b33b 100%); }
-        .social-links a.ig-btn { background: radial-gradient(circle at 30% 30%, #feda75 0%, #f58529 25%, #dd2a7b 50%, #8134af 75%, #515bd4 100%); }
-        .social-links a svg { width:20px;height:20px; fill:#fff; }
-        .social-links a:hover { transform: translateY(-4px) scale(1.05); box-shadow:0 12px 30px rgba(0,0,0,0.5); }
+    /* Buttons */
+    .button {
+      display: inline-flex; min-height: 50px; align-items: center; justify-content: center; gap: 10px;
+      padding: 13px 20px; border: 1px solid transparent; border-radius: 13px;
+      font: inherit; font-size: 0.94rem; font-weight: 700; text-align: center; text-decoration: none; cursor: pointer;
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+    }
+    .button:hover { transform: translateY(-2px); }
+    .button-primary { color: #1c130e; background: linear-gradient(135deg, var(--accent), var(--accent-2)); box-shadow: 0 12px 28px rgba(255, 113, 57, 0.18); }
+    .button-primary:hover { box-shadow: 0 16px 34px rgba(255, 113, 57, 0.28); }
+    .button-secondary { color: var(--text); border-color: var(--line); background: rgba(255, 255, 255, 0.035); }
+    .button-secondary:hover { background: rgba(255, 255, 255, 0.07); }
+    .button svg { width: 18px; height: 18px; flex: 0 0 auto; }
 
-        /* Responsive tweak */
-        @media (max-width:768px) { .top-socials { top:12px; right:12px; } }
+    /* Hero */
+    .hero { position: relative; overflow: hidden; padding-block: 94px 76px; }
+    .hero-grid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.7fr); align-items: center; gap: 52px; }
+    .hero h1 { max-width: 760px; margin-bottom: 22px; font-size: clamp(2.8rem, 6.1vw, 5.35rem); letter-spacing: -0.065em; }
+    .hero-copy { max-width: 630px; color: var(--muted); font-size: clamp(1rem, 1.5vw, 1.12rem); }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+    .hero-note { margin: 20px 0 0; color: #7f8590; font-size: 0.83rem; }
+    .hero-panel {
+      position: relative; isolation: isolate; min-height: 370px; overflow: hidden;
+      display: flex; flex-direction: column; justify-content: flex-end; padding: 30px;
+      border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 28px;
+      background: linear-gradient(145deg, rgba(255, 113, 57, 0.20), rgba(255, 173, 72, 0.04) 42%, rgba(255,255,255,0.025)), #14161b;
+      box-shadow: var(--shadow);
+    }
+    .hero-panel::before, .hero-panel::after { position: absolute; z-index: -1; content: ""; border-radius: 50%; }
+    .hero-panel::before { width: 300px; height: 300px; top: -68px; right: -68px; border: 1px solid rgba(255, 173, 72, 0.26); box-shadow: 0 0 0 28px rgba(255, 173, 72, 0.035), 0 0 0 58px rgba(255, 173, 72, 0.025); }
+    .hero-panel::after { width: 190px; height: 190px; top: 22px; right: -12px; background: radial-gradient(circle at 35% 30%, rgba(255, 173, 72, .20), transparent 68%); }
+    .panel-icon { display: grid; place-items: center; width: 66px; height: 66px; margin-bottom: auto; border: 1px solid rgba(255,255,255,.12); border-radius: 20px; background: rgba(8,9,12,.36); color: var(--accent-2); }
+    .panel-icon svg { width: 34px; height: 34px; }
+    .panel-kicker { color: var(--accent-2); font-size: .76rem; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; }
+    .hero-panel h2 { max-width: 320px; margin: 9px 0 12px; font-size: 1.85rem; }
+    .hero-panel p { max-width: 340px; margin-bottom: 0; color: var(--muted); font-size: .92rem; }
+    .trust-row { display: flex; flex-wrap: wrap; gap: 18px 28px; padding-top: 34px; margin-top: 52px; border-top: 1px solid var(--line); }
+    .trust-item { display: flex; align-items: center; gap: 10px; color: #c4c8cf; font-size: .88rem; font-weight: 600; }
+    .check { display: grid; place-items: center; width: 23px; height: 23px; border: 1px solid rgba(255, 173, 72, .34); border-radius: 50%; color: var(--accent-2); font-size: .8rem; }
 
-        /* Print */
-        @media print { .download-btn, .bg-animation, .top-socials { display:none } body { background:white; color:black } }
-    </style>
+    /* Shared cards */
+    .card-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+    .card {
+      padding: 26px; border: 1px solid var(--line); border-radius: var(--radius);
+      background: linear-gradient(150deg, rgba(255,255,255,.035), rgba(255,255,255,.012));
+      box-shadow: 0 12px 32px rgba(0,0,0,.10); transition: border-color .2s ease, transform .2s ease;
+    }
+    .card:hover { border-color: rgba(255, 113, 57, .35); transform: translateY(-3px); }
+    .card-icon { display: grid; place-items: center; width: 48px; height: 48px; margin-bottom: 22px; border: 1px solid rgba(255,113,57,.2); border-radius: 15px; background: rgba(255,113,57,.09); color: var(--accent-2); }
+    .card-icon svg { width: 24px; height: 24px; }
+    .card p { margin-bottom: 0; color: var(--muted); font-size: .94rem; }
+
+    /* Process */
+    .process-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; counter-reset: process; }
+    .process-card { position: relative; padding: 28px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); }
+    .step-number { display: inline-grid; place-items: center; width: 44px; height: 44px; margin-bottom: 22px; border-radius: 14px; background: linear-gradient(135deg, var(--accent), var(--accent-2)); color: #21140d; font-family: "Space Grotesk", sans-serif; font-size: 1.1rem; font-weight: 700; }
+    .process-card p { color: var(--muted); font-size: .94rem; margin-bottom: 0; }
+
+    /* Pricing */
+    .pricing-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: stretch; gap: 18px; }
+    .price-card { position: relative; display: flex; flex-direction: column; padding: 28px; border: 1px solid var(--line); border-radius: 22px; background: var(--surface); }
+    .price-card.featured { border-color: rgba(255, 113, 57, .62); background: linear-gradient(160deg, rgba(255, 113, 57, .10), rgba(255,255,255,.025) 52%), var(--surface-strong); box-shadow: 0 18px 48px rgba(255, 113, 57, .08); }
+    .plan-label { color: var(--accent-2); font-size: .76rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+    .plan-name { margin: 9px 0 4px; font-family: "Space Grotesk", sans-serif; font-size: 1.3rem; font-weight: 700; }
+    .plan-duration { min-height: 24px; color: var(--muted); font-size: .88rem; }
+    .price { display: flex; align-items: baseline; gap: 5px; margin: 22px 0; font-family: "Space Grotesk", sans-serif; font-size: 2.55rem; font-weight: 700; letter-spacing: -.06em; }
+    .price small { color: var(--muted); font-family: "DM Sans", sans-serif; font-size: .86rem; font-weight: 500; letter-spacing: 0; }
+    .feature-list { display: grid; gap: 12px; padding: 0; margin: 0 0 28px; list-style: none; }
+    .feature-list li { display: flex; align-items: flex-start; gap: 10px; color: #d3d6dc; font-size: .91rem; }
+    .feature-list li::before { content: "✓"; flex: 0 0 auto; color: var(--accent-2); font-weight: 700; }
+    .price-card .button { width: 100%; margin-top: auto; }
+    .pricing-footnote { max-width: 780px; margin: 22px auto 0; color: var(--muted); font-size: .84rem; text-align: center; }
+
+    /* Safety and contact */
+    .safety-box { display: grid; grid-template-columns: 54px minmax(0, 1fr); gap: 20px; padding: 28px; border: 1px solid rgba(255, 173, 72, .24); border-radius: var(--radius); background: rgba(255, 173, 72, .055); }
+    .safety-icon { display: grid; place-items: center; width: 50px; height: 50px; border-radius: 15px; background: rgba(255, 173, 72, .12); color: var(--accent-2); font-size: 1.4rem; }
+    .safety-box h3 { margin-bottom: 9px; }
+    .safety-box p { margin-bottom: 0; color: #c1c5ce; font-size: .92rem; }
+    .contact-section { padding-top: 20px; }
+    .contact-panel {
+      position: relative; overflow: hidden; display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 28px;
+      padding: clamp(28px, 5vw, 52px); border: 1px solid rgba(255, 113, 57, .24); border-radius: 28px;
+      background: radial-gradient(ellipse at 95% 0%, rgba(255,173,72,.13), transparent 40%), linear-gradient(135deg, rgba(255,113,57,.10), rgba(255,255,255,.025));
+    }
+    .contact-panel h2 { margin-bottom: 12px; }
+    .contact-panel p { max-width: 620px; margin-bottom: 0; color: var(--muted); }
+    .contact-actions { display: flex; flex-direction: column; gap: 10px; min-width: 210px; }
+    .contact-actions small { color: #878d97; text-align: center; font-size: .78rem; }
+
+    /* Footer */
+    .site-footer { margin-top: 76px; border-top: 1px solid var(--line); background: rgba(0,0,0,.12); }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 22px; padding-block: 28px; }
+    .footer-brand { margin-bottom: 4px; font-family: "Space Grotesk", sans-serif; font-weight: 700; }
+    .footer-copy { margin: 0; color: var(--muted); font-size: .82rem; }
+    .social-links { display: flex; gap: 10px; }
+    .social-link { display: grid; place-items: center; width: 42px; height: 42px; border: 1px solid var(--line); border-radius: 13px; background: rgba(255,255,255,.035); color: var(--text); transition: background .2s ease, transform .2s ease; }
+    .social-link:hover { transform: translateY(-2px); background: rgba(255,255,255,.08); }
+    .social-link svg { width: 19px; height: 19px; fill: currentColor; }
+    .floating-whatsapp { position: fixed; right: 22px; bottom: 22px; z-index: 40; display: inline-flex; align-items: center; gap: 10px; padding: 13px 17px; border: 1px solid rgba(255,255,255,.18); border-radius: 999px; background: var(--green); color: #062612; box-shadow: 0 12px 32px rgba(0,0,0,.35); font-size: .89rem; font-weight: 800; text-decoration: none; transition: transform .2s ease; }
+    .floating-whatsapp:hover { transform: translateY(-3px); }
+    .floating-whatsapp svg { width: 21px; height: 21px; fill: currentColor; }
+
+    @media (max-width: 940px) {
+      .hero-grid { grid-template-columns: minmax(0, 1fr) minmax(250px, .75fr); gap: 28px; }
+      .card-grid, .pricing-grid, .process-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .pricing-grid .price-card:last-child { grid-column: 1 / -1; }
+      .hero-panel { min-height: 340px; }
+      .nav-links { gap: 17px; }
+    }
+    @media (max-width: 700px) {
+      .container { width: min(100% - 32px, var(--max-width)); }
+      .section { padding-block: 60px; }
+      .nav-wrap { min-height: 68px; }
+      .menu-toggle { display: inline-grid; place-items: center; }
+      .nav-links {
+        position: absolute; top: calc(100% + 1px); left: 0; right: 0; display: none; align-items: stretch; flex-direction: column; gap: 0;
+        padding: 10px 16px 18px; border-bottom: 1px solid var(--line); background: rgba(11,12,15,.98);
+      }
+      .nav-links.is-open { display: flex; }
+      .nav-links a { padding: 12px 8px; }
+      .nav-links .nav-cta { margin-top: 7px; text-align: center; }
+      .hero { padding-block: 58px 44px; }
+      .hero-grid { grid-template-columns: 1fr; gap: 34px; }
+      .hero h1 { font-size: clamp(2.8rem, 12vw, 4.3rem); }
+      .hero-panel { min-height: 290px; }
+      .trust-row { gap: 13px 18px; margin-top: 36px; }
+      .card-grid, .pricing-grid, .process-grid { grid-template-columns: 1fr; }
+      .pricing-grid .price-card:last-child { grid-column: auto; }
+      .safety-box { grid-template-columns: 1fr; gap: 14px; padding: 23px; }
+      .contact-panel { grid-template-columns: 1fr; }
+      .contact-actions { width: 100%; min-width: 0; }
+      .footer-inner { align-items: flex-start; flex-direction: column; }
+      .floating-whatsapp { right: 14px; bottom: 14px; padding: 13px; }
+      .floating-whatsapp span { display: none; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+    }
+    @media print {
+      :root { color-scheme: light; --text: #171717; --muted: #555; --line: #ddd; }
+      body { background: #fff !important; color: #171717 !important; font-size: 10pt; }
+      .site-header, .floating-whatsapp, .hero-actions, .contact-actions, .social-links, .menu-toggle, .button, .hero-note { display: none !important; }
+      .hero, .section { padding-block: 22px; }
+      .hero-grid { display: block; }
+      .hero-panel { display: none; }
+      .hero h1 { font-size: 28pt; }
+      h2 { font-size: 20pt; }
+      .card, .process-card, .price-card, .safety-box, .contact-panel { color: #171717; background: #fff !important; border: 1px solid #ddd; box-shadow: none; break-inside: avoid; }
+      .card p, .process-card p, .price-card li, .section-intro, .contact-panel p, .safety-box p { color: #333 !important; }
+      .card-grid, .pricing-grid, .process-grid { grid-template-columns: repeat(2, 1fr); }
+      .site-footer { margin-top: 20px; }
+      a { text-decoration: none; }
+    }
+  </style>
 </head>
 <body>
-    <div class="bg-animation"></div>
-
-    <!-- Top floating premium social buttons -->
-    <div class="top-socials" aria-hidden="false">
-        <a class="wa-btn" href="https://wa.me/919717318758?text=Hello%20Fahad%2C%20I%27m%20interested%20in%20your%20coaching%20services." target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
-            <!-- WhatsApp glyph (white) -->
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M20.52 3.48A11.86 11.86 0 0 0 12 0C5.37 0 0 5.37 0 12a11.9 11.9 0 0 0 2.06 6.39L0 24l5.84-1.91A11.93 11.93 0 0 0 12 24c6.63 0 12-5.37 12-12 0-3.2-1.24-6.18-3.48-8.52zM12 21.5c-1.2 0-2.38-.3-3.45-.87l-.25-.14-3.47 1.14.98-3.38-.16-.28A9.29 9.29 0 0 1 2.5 12C2.5 6.75 6.75 2.5 12 2.5S21.5 6.75 21.5 12 17.25 21.5 12 21.5zM17.1 14.1c-.27-.14-1.6-.79-1.85-.88-.25-.09-.43-.14-.62.14-.19.27-.75.88-.92 1.06-.17.19-.33.21-.61.07-.28-.14-1.18-.43-2.24-1.38-.83-.74-1.39-1.66-1.55-1.94-.16-.27-.02-.42.12-.56.12-.12.27-.31.4-.47.13-.16.17-.27.26-.45.09-.18.05-.34-.02-.48-.07-.14-.62-1.5-.85-2.05-.22-.53-.45-.46-.62-.47l-.53-.01c-.18 0-.47.07-.72.34-.25.27-.96.94-.96 2.3s.98 2.66 1.12 2.84c.14.18 1.94 3.02 4.7 4.22 3.26 1.4 3.26 0.94 3.85 0.88.59-.06 1.92-.78 2.19-1.53.27-.75.27-1.39.19-1.53-.08-.14-.29-.22-.56-.36z"/></svg>
-        </a>
-
-        <a class="ig-btn" href="https://www.instagram.com/fahadashraf815" target="_blank" rel="noopener noreferrer" aria-label="Visit Instagram profile">
-            <!-- Instagram glyph (white) -->
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 2.2c3.2 0 3.584.012 4.85.07 1.17.054 1.97.24 2.43.403.6.215 1.03.473 1.48.918.45.45.703.87.922 1.47.16.46.348 1.26.402 2.43.058 1.27.07 1.65.07 4.85s-.012 3.584-.07 4.85c-.054 1.17-.242 1.97-.402 2.43-.219.6-.472 1.03-.922 1.48-.45.45-.88.707-1.48.922-.46.16-1.26.348-2.43.402-1.27.058-1.65.07-4.85.07s-3.584-.012-4.85-.07c-1.17-.054-1.97-.242-2.43-.402-.6-.219-1.03-.472-1.48-.922-.45-.45-.707-.88-.922-1.48-.16-.46-.348-1.26-.402-2.43C2.212 15.584 2.2 15.2 2.2 12s.012-3.584.07-4.85c.054-1.17.242-1.97.402-2.43.219-.6.472-1.03.922-1.48.45-.45.88-.707 1.48-.922.46-.16 1.26-.348 2.43-.402C8.416 2.212 8.8 2.2 12 2.2m0-2.2C8.72 0 8.297.013 7.022.072 5.73.132 4.66.354 3.78.737 2.87 1.13 2.1 1.62 1.36 2.36.62 3.1.13 3.87-.27 4.78c-.383.88-.605 1.95-.665 3.24C-.013 8.297 0 8.72 0 12c0 3.28.013 3.703.072 4.978.06 1.29.282 2.36.665 3.24.4.9.99 1.67 1.73 2.41.74.74 1.51 1.33 2.41 1.73.88.383 1.95.605 3.24.665C8.297 23.987 8.72 24 12 24s3.703-.013 4.978-.072c1.29-.06 2.36-.282 3.24-.665.9-.4 1.67-.99 2.41-1.73.74-.74 1.33-1.51 1.73-2.41.383-.88.605-1.95.665-3.24C23.987 15.703 24 15.28 24 12s-.013-3.703-.072-4.978c-.06-1.29-.282-2.36-.665-3.24-.4-.9-.99-1.67-1.73-2.41C19.49.99 18.72.4 17.82 0c-.88-.383-1.95-.605-3.24-.665C15.703.013 15.28 0 12 0zM12 5.8A6.2 6.2 0 1 0 18.2 12 6.208 6.208 0 0 0 12 5.8zm0 10.2A4 4 0 1 1 16 12a4.005 4.005 0 0 1-4 4zm6.4-11.85a1.45 1.45 0 1 0 1.45 1.45 1.45 1.45 0 0 0-1.45-1.45z"/></svg>
-        </a>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="#home" aria-label="Fahad Ashraf home">
+        <span class="brand-mark" aria-hidden="true">FA</span>
+        <span>FAHAD ASHRAF</span>
+      </a>
+      <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="primary-navigation">☰</button>
+      <nav class="nav-links" id="primary-navigation" aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#services">Coaching</a>
+        <a href="#process">How It Works</a>
+        <a href="#pricing">Packages</a>
+        <a class="nav-cta button button-primary" href="https://wa.me/919717318758?text=Hello%20Fahad%2C%20I%27m%20interested%20in%20your%20fitness%20coaching%20services." target="_blank" rel="noopener noreferrer">Contact on WhatsApp</a>
+      </nav>
     </div>
+  </header>
 
-    <div class="container">
-        <header>
-            <h1 class="logo-text">Fahad Ashraf</h1>
-            <p class="tagline">Elite Physique Transformation Specialist</p>
-            <div class="divider"></div>
-        </header>
-
-        <!-- About / Services / Process / Pricing / Contact sections (unchanged content) -->
-        <section id="about">
-            <div class="card">
-                <h2>About Me</h2>
-                <p style="font-size: 1.1rem; line-height: 1.8; color: var(--text-muted);">
-                    Main Fahad Ashraf, aapki body transformation journey ka trusted partner. Mere paas extensive experience hai 
-                    <span class="highlight">advanced fitness coaching, nutrition planning, aur performance enhancement</span> mein. 
-                    Chahe aap beginner ho ya experienced athlete, main aapke specific goals ke according 
-                    <span class="highlight">customized solutions</span> provide karta hoon.
-                </p>
+  <main>
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="hero-grid">
+          <div>
+            <p class="eyebrow">Personalized Online Coaching</p>
+            <h1>Build strength.<br><span class="accent-text">Shape your physique.</span></h1>
+            <p class="hero-copy">Practical fitness coaching built around your goals, training experience, nutrition habits, and everyday routine. Follow a structured plan, track your progress, and make consistency part of your lifestyle.</p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="https://wa.me/919717318758?text=Hello%20Fahad%2C%20I%27d%20like%20to%20discuss%20my%20fitness%20goals." target="_blank" rel="noopener noreferrer">
+                Discuss Your Goals
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+              <a class="button button-secondary" href="#pricing">Explore Coaching Plans</a>
             </div>
-        </section>
+            <p class="hero-note">Individual plans • Progress reviews • Online support</p>
+          </div>
 
-        <section id="services">
-            <h2>Coaching Services</h2>
-            <div class="services-grid">
-                <div class="service-item">
-                    <h3>🔥 Fat / Weight Loss</h3>
-                    <p>Caloric deficit planning, cardio protocols, metabolic conditioning</p>
-                </div>
-                <div class="service-item">
-                    <h3>💪 Lean Muscle Gain</h3>
-                    <p>Clean bulking strategies, nutrient timing, body recomposition</p>
-                </div>
-                <div class="service-item">
-                    <h3>🏋️ Muscle Building</h3>
-                    <p>Hypertrophy-focused training, progressive overload, recovery optimization</p>
-                </div>
-                <div class="service-item">
-                    <h3>⚗️ Steroid Cycle Planning</h3>
-                    <p>Harm-reduction based protocols, blood work monitoring, compound selection</p>
-                </div>
-                <div class="service-item">
-                    <h3>🥗 Diet & Workout Planning</h3>
-                    <p>Macro calculations, meal timing, periodized training splits</p>
-                </div>
-                <div class="service-item">
-                    <h3>🔄 PCT Guidance</h3>
-                    <p>Recovery protocols, HPTA restoration, health marker monitoring</p>
-                </div>
-                <div class="service-item" style="grid-column: 1 / -1;">
-                    <h3>🧬 Peptide-Based Protocols</h3>
-                    <p>Growth hormone secretagogues, healing peptides, performance optimization</p>
-                </div>
+          <aside class="hero-panel" aria-label="Coaching approach">
+            <div class="panel-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4v16M18 4v16M3 8h6M3 16h6M15 8h6M15 16h6M9 12h6"/></svg>
             </div>
-        </section>
+            <span class="panel-kicker">Your goals. Your plan.</span>
+            <h2>Progress through structure, not guesswork.</h2>
+            <p>Clear training guidance, realistic nutrition habits, and regular reviews to help you stay on track.</p>
+          </aside>
+        </div>
 
-        <section id="process">
-            <h2>Coaching Process</h2>
-            <div class="process-steps">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <div class="step-content">
-                        <h3>Initial Assessment</h3>
-                        <ul>
-                            <li>Goal analysis & body composition evaluation</li>
-                            <li>Experience level & training history review</li>
-                            <li>Budget & lifestyle considerations</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <div class="step-content">
-                        <h3>Custom Plan Design</h3>
-                        <ul>
-                            <li>Personalized Diet Plan (macro/micro calculated)</li>
-                            <li>Structured Workout / Training Split</li>
-                            <li>Evidence-based Supplement Guidance</li>
-                            <li>Steroid Cycle & PCT Planning (guidance only)</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <div class="step-content">
-                        <h3>Ongoing Support</h3>
-                        <ul>
-                            <li>Regular progress tracking</li>
-                            <li>Plan adjustments based on feedback</li>
-                            <li>24/7 query resolution</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <div class="trust-row" aria-label="Coaching principles">
+          <div class="trust-item"><span class="check" aria-hidden="true">✓</span> Goal-focused planning</div>
+          <div class="trust-item"><span class="check" aria-hidden="true">✓</span> Practical nutrition guidance</div>
+          <div class="trust-item"><span class="check" aria-hidden="true">✓</span> Progress tracking</div>
+          <div class="trust-item"><span class="check" aria-hidden="true">✓</span> Sustainable habits</div>
+        </div>
+      </div>
+    </section>
 
-        <section id="disclaimer">
-            <div class="warning-box">
-                <h3>⚠️ Important Medical Disclaimer</h3>
-                <p><strong>Steroid use involves inherent health risks.</strong> Main sirf <strong>harm-reduction based educational guidance</strong> provide karta hoon:</p>
-                <p>✓ Proper planning aur monitoring protocols<br>
-                   ✓ Blood work interpretation<br>
-                   ✓ Side effect management strategies<br>
-                   ✓ <strong>NO unsafe recommendations or unrealistic promises</strong></p>
-                <p style="margin-top: 15px; font-style: italic; border-top: 1px solid rgba(255,71,87,0.3); padding-top: 15px;">
-                    Client safety is my #1 priority. Illegal substance procurement advice nahi di jaati.
-                </p>
-            </div>
-        </section>
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">About the coaching</p>
+          <h2>A plan that fits <span class="accent-text">your life.</span></h2>
+          <p class="section-intro">I'm Fahad Ashraf. My coaching approach focuses on helping you work toward your physique and fitness goals with a clear plan, consistent effort, and regular progress reviews. The starting point is understanding your goal, training background, preferences, and schedule.</p>
+        </div>
+      </div>
+    </section>
 
-        <section id="pricing">
-            <h2>Investment Plans</h2>
-            
-            <div class="pricing-grid">
-                <div class="pricing-card">
-                    <div class="plan-name">Starter Plan</div>
-                    <div class="plan-duration">One-time Payment</div>
-                    <div class="price">₹500</div>
-                    <ul class="features-list">
-                        <li>Single personalized blueprint</li>
-                        <li>Diet & workout structure</li>
-                        <li>Supplement recommendations</li>
-                        <li>Self-guided execution</li>
-                    </ul>
-                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 15px;">
-                        Best for: Self-motivated individuals
-                    </p>
-                </div>
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Coaching services</p>
+          <h2>Support for every stage of <span class="accent-text">your journey.</span></h2>
+          <p class="section-intro">Choose the area you want to focus on. Your plan can be adjusted as your experience, routine, and goals develop.</p>
+        </div>
 
-                <div class="pricing-card">
-                    <div class="plan-name">Monthly Guidance</div>
-                    <div class="plan-duration">1 Month</div>
-                    <div class="price">₹1,000</div>
-                    <ul class="features-list">
-                        <li>Weekly check-ins</li>
-                        <li>Plan adjustments</li>
-                        <li>Progress tracking</li>
-                        <li>Email/WhatsApp support</li>
-                    </ul>
-                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 15px;">
-                        Best for: Short-term goals
-                    </p>
-                </div>
+        <div class="card-grid">
+          <article class="card">
+            <div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 16l4-5 4 3 7-9M14 5h5v5"/></svg></div>
+            <h3>Fat Loss & Weight Management</h3>
+            <p>Build sustainable nutrition and activity habits with practical calorie guidance, achievable targets, and progress reviews.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4v16M18 4v16M3 8h6M3 16h6M15 8h6M15 16h6"/></svg></div>
+            <h3>Lean Muscle Gain</h3>
+            <p>Use structured resistance training, suitable nutrition targets, and recovery habits to support gradual muscle development.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M3 12h18M5.6 5.6l12.8 12.8M18.4 5.6 5.6 18.4"/></svg></div>
+            <h3>Strength & Workout Planning</h3>
+            <p>Follow a structured training split with progressive goals, exercise selection, and planned recovery.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v14H4zM8 9h8M8 13h5M8 16h3"/></svg></div>
+            <h3>Nutrition Guidance</h3>
+            <p>Organize meals around practical food choices, balanced nutrition, and habits that suit your routine and preferences.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 18V6M4 18h16M8 15l3-4 3 2 5-7"/></svg></div>
+            <h3>Body Recomposition</h3>
+            <p>Coordinate training, nutrition, and progress tracking for a balanced approach to body composition goals.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 7.5-7 10-4-2.5-7-5.5-7-10V6l7-3zM9 12l2 2 4-4"/></svg></div>
+            <h3>Progress & Recovery Habits</h3>
+            <p>Review consistency, training response, sleep, and recovery habits to help make your plan more sustainable.</p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-                <div class="pricing-card">
-                    <div class="plan-name">Quarterly Transformation</div>
-                    <div class="plan-duration">3 Months</div>
-                    <div class="price">₹2,500</div>
-                    <ul class="features-list">
-                        <li>Complete 12-week overhaul</li>
-                        <li>Bi-weekly consultations</li>
-                        <li>Advanced periodization</li>
-                        <li>Priority support</li>
-                    </ul>
-                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 15px;">
-                        Best for: Serious beginners
-                    </p>
-                </div>
-            </div>
+    <section class="section" id="process">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">How it works</p>
+          <h2>Three steps to get <span class="accent-text">started.</span></h2>
+          <p class="section-intro">A clear process helps set expectations from the first conversation through ongoing reviews.</p>
+        </div>
 
-            <div class="pricing-card vip-card" style="margin-top: 40px; max-width: 600px; margin-left: auto; margin-right: auto;">
-                <div class="vip-badge">🔥 VIP Elite Coaching</div>
-                <div class="plan-duration">Monthly Subscription</div>
-                <div class="price">₹2,000<span>/month</span></div>
-                <ul class="features-list" style="text-align: center;">
-                    <li>✓ Weekly Diet Updates — Real-time macro adjustments</li>
-                    <li>✓ Training & Progress Review — Form checks & plateau breaking</li>
-                    <li>✓ Weekend Voice/Video Calls — 30 mins 1-on-1 consultation</li>
-                    <li>✓ Regular Check-ins — Daily accountability via WhatsApp</li>
-                    <li>✓ Priority Support — Instant responses, emergency guidance</li>
-                </ul>
-                <p style="color: var(--secondary); font-weight: 600; margin-top: 20px;">
-                    Ideal for: Competitive athletes & rapid transformations
-                </p>
-            </div>
-        </section>
+        <div class="process-grid">
+          <article class="process-card">
+            <span class="step-number">01</span>
+            <h3>Share Your Goals</h3>
+            <p>Tell me about your main goal, current training experience, available equipment, routine, and preferred coaching option.</p>
+          </article>
+          <article class="process-card">
+            <span class="step-number">02</span>
+            <h3>Receive Your Plan</h3>
+            <p>Discuss a suitable training structure and practical nutrition approach based on the information you share.</p>
+          </article>
+          <article class="process-card">
+            <span class="step-number">03</span>
+            <h3>Review & Adjust</h3>
+            <p>Track progress, share feedback, and make reasonable adjustments as your needs and results evolve.</p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-        <section id="contact" class="cta-section">
-            <h2>Start Your Transformation</h2>
-            <p class="contact-info">Serious inquiries only. Share your details:</p>
-            <div style="text-align: left; max-width: 600px; margin: 30px auto; background: rgba(255,255,255,0.03); padding: 30px; border-radius: 15px;">
-                <p style="margin-bottom: 15px; color: var(--text);"><span class="highlight">1.</span> Your Primary Goal <em style="color: var(--text-muted);">(Fat loss / Muscle gain / Recomposition)</em></p>
-                <p style="margin-bottom: 15px; color: var(--text);"><span class="highlight">2.</span> Current Experience Level <em style="color: var(--text-muted);">(Beginner / Intermediate / Advanced)</em></p>
-                <p style="margin-bottom: 15px; color: var(--text);"><span class="highlight">3.</span> Monthly Budget <em style="color: var(--text-muted);">(For package recommendation)</em></p>
-                <p style="color: var(--text);"><span class="highlight">4.</span> Medical History <em style="color: var(--text-muted);">(Previous cycles/conditions)</em></p>
-            </div>
-            <button class="download-btn" onclick="downloadPDF()"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 16l-4-4h3V4h2v8h3l-4 4zm-6 2v2h12v-2H6z"/></svg>Download Service Catalog (PDF)</button>
-            <p style="margin-top: 30px; color: var(--text-muted); font-style: italic;">"Transformations require commitment. Agar aap dedicated ho apne goals ko leke, toh main dedicated hoon aapki success ke liye."</p>
-        </section>
+    <section class="section" id="pricing">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Coaching packages</p>
+          <h2>Choose the level of <span class="accent-text">support you need.</span></h2>
+          <p class="section-intro">Compare the options below, then message me on WhatsApp to discuss which package best fits your goals.</p>
+        </div>
 
-        <footer>
-            <p style="font-family: 'Orbitron', sans-serif; font-size: 1.5rem; color: var(--primary); margin-bottom: 10px;">FAHAD ASHRAF</p>
-            <p>Elite Physique Transformation Specialist</p>
-            <div class="social-links">
-                <a class="wa-btn" href="https://wa.me/919717318758?text=Hello%20Fahad%2C%20I%27m%20interested%20in%20your%20coaching%20services." target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.52 3.48A11.86 11.86 0 0 0 12 0C5.37 0 0 5.37 0 12a11.9 11.9 0 0 0 2.06 6.39L0 24l5.84-1.91A11.93 11.93 0 0 0 12 24c6.63 0 12-5.37 12-12 0-3.2-1.24-6.18-3.48-8.52zM12 21.5c-1.2 0-2.38-.3-3.45-.87l-.25-.14-3.47 1.14.98-3.38-.16-.28A9.29 9.29 0 0 1 2.5 12C2.5 6.75 6.75 2.5 12 2.5S21.5 6.75 21.5 12 17.25 21.5 12 21.5zM17.1 14.1c-.27-.14-1.6-.79-1.85-.88-.25-.09-.43-.14-.62.14-.19.27-.75.88-.92 1.06-.17.19-.33.21-.61.07-.28-.14-1.18-.43-2.24-1.38-.83-.74-1.39-1.66-1.55-1.94-.16-.27-.02-.42.12-.56.12-.12.27-.31.4-.47.13-.16.17-.27.26-.45.09-.18.05-.34-.02-.48-.07-.14-.62-1.5-.85-2.05-.22-.53-.45-.46-.62-.47l-.53-.01c-.18 0-.47.07-.72.34-.25.27-.96.94-.96 2.3s.98 2.66 1.12 2.84c.14.18 1.94 3.02 4.7 4.22 3.26 1.4 3.26 0.94 3.85 0.88.59-.06 1.92-.78 2.19-1.53.27-.75.27-1.39.19-1.53-.08-.14-.29-.22-.56-.36z"/></svg></a>
-                <a class="ig-btn" href="https://www.instagram.com/fahadashraf815" target="_blank" rel="noopener noreferrer" aria-label="Visit Instagram profile"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.2c3.2 0 3.584.012 4.85.07 1.17.054 1.97.24 2.43.403.6.215 1.03.473 1.48.918.45.45.703.87.922 1.47.16.46.348 1.26.402 2.43.058 1.27.07 1.65.07 4.85s-.012 3.584-.07 4.85c-.054 1.17-.242 1.97-.402 2.43-.219.6-.472 1.03-.922 1.48-.45.45-.88.707-1.48.922-.46.16-1.26.348-2.43.402-1.27.058-1.65.07-4.85.07s-3.584-.012-4.85-.07c-1.17-.054-1.97-.242-2.43-.402-.6-.219-1.03-.472-1.48-.922-.45-.45-.707-.88-.922-1.48-.16-.46-.348-1.26-.402-2.43C2.212 15.584 2.2 15.2 2.2 12s.012-3.584.07-4.85c.054-1.17.242-1.97.402-2.43.219-.6.472-1.03.922-1.48.45-.45.88-.707 1.48-.922.46-.16 1.26-.348 2.43-.402C8.416 2.212 8.8 2.2 12 2.2m0-2.2C8.72 0 8.297.013 7.022.072 5.73.132 4.66.354 3.78.737 2.87 1.13 2.1 1.62 1.36 2.36.62 3.1.13 3.87-.27 4.78c-.383.88-.605 1.95-.665 3.24C-.013 8.297 0 8.72 0 12c0 3.28.013 3.703.072 4.978.06 1.29.282 2.36.665 3.24.4.9.99 1.67 1.73 2.41.74.74 1.51 1.33 2.41 1.73.88.383 1.95.605 3.24.665C8.297 23.987 8.72 24 12 24s3.703-.013 4.978-.072c1.29-.06 2.36-.282 3.24-.665.9-.4 1.67-.99 2.41-1.73.74-.74 1.33-1.51 1.73-2.41.383-.88.605-1.95.665-3.24C23.987 15.703 24 15.28 24 12s-.013-3.703-.072-4.978c-.06-1.29-.282-2.36-.665-3.24-.4-.9-.99-1.67-1.73-2.41C19.49.99 18.72.4 17.82 0c-.88-.383-1.95-.605-3.24-.665C15.703.013 15.28 0 12 0zM12 5.8A6.2 6.2 0 1 0 18.2 12 6.208 6.208 0 0 0 12 5.8zm0 10.2A4 4 0 1 1 16 12a4.005 4.005 0 0 1-4 4zm6.4-11.85a1.45 1.45 0 1 0 1.45 1.45 1.45 1.45 0 0 0-1.45-1.45z"/></svg></a>
-            </div>
-            <p style="font-size: 0.9rem; margin-top: 20px;">© 2024 Fahad Ashraf Coaching. All rights reserved.</p>
-        </footer>
+        <div class="pricing-grid">
+          <article class="price-card">
+            <span class="plan-label">Get started</span>
+            <h3 class="plan-name">Starter Plan</h3>
+            <p class="plan-duration">One-time payment</p>
+            <p class="price">₹500 <small>/ once</small></p>
+            <ul class="feature-list">
+              <li>Personalized starter plan</li>
+              <li>Workout structure</li>
+              <li>General nutrition guidance</li>
+              <li>Independent, self-guided execution</li>
+            </ul>
+            <a class="button button-secondary" href="https://wa.me/919717318758?text=Hello%20Fahad%2C%20I%27m%20interested%20in%20the%20Starter%20Plan%20for%20%E2%82%B9500." target="_blank" rel="noopener noreferrer">Ask About This Plan</a>
+          </article>
+
+          <article class="price-card featured">
+            <span class="plan-label">Ongoing support</span>
+            <h3 class="plan-name">Monthly Guidance</h3>
+            <p class="plan-duration">One month</p>
+            <p class="price">₹1,000 <small>/ month</small></p>
+            <ul class="feature-list">
+              <li>Weekly check-ins</li>
+              <li>Plan adjustments as needed</li>
+              <li>Progress tracking</li>
+              <li>WhatsApp support</li>
+            </ul>
+            <a class="button button-primary" href="https://wa.me/919717318758?text=Hello%20Fahad%2C%20I%27m%20interested%20in%20Monthly%20Guidance%20for%20%E2%82%B91%2C000." target="_blank" rel="noopener noreferrer">Choose Monthly Guidance</a>
+          </article>
+
+          <article class="price-card">
+            <span class="plan-label">Long-term focus</span>
+            <h3 class="plan-name">Quarterly Transformation</h3>
+            <p class="plan-duration">Three months</p>
+            <p class="price">₹2,500 <small>/ 3 months</small></p>
+            <ul class="feature-list">
+              <li>12-week coaching structure</li>
+              <li>Bi-weekly consultations</li>
+              <li>Planned training progression</li>
+              <li>Priority support</li>
+            </ul>
+            <a class="button button-secondary" href="https://wa.me/919717318758?text=Hello%20Fahad%2C%20I%27m%20interested%20in%20the%20Quarterly%20Transformation%20package%20for%20%E2%82%B92%2C500." target="_blank" rel="noopener noreferrer">Ask About This Plan</a>
+          </article>
+        </div>
+
+        <div style="max-width: 720px; margin: 22px auto 0;">
+          <article class="price-card featured">
+            <span class="plan-label">Personalized support</span>
+            <h3 class="plan-name">VIP Elite Coaching</h3>
+            <p class="plan-duration">Monthly subscription</p>
+            <p class="price">₹2,000 <small>/ month</small></p>
+            <ul class="feature-list">
+              <li>Weekly nutrition plan reviews</li>
+              <li>Training and progress reviews</li>
+              <li>One 30-minute voice or video consultation each weekend</li>
+              <li>Regular accountability check-ins through WhatsApp</li>
+              <li>Priority messaging support</li>
+            </ul>
+            <a class="button button-primary" href="https://wa.me/919717318758?text=Hello%20Fahad%2C%20I%27d%20like%20more%20information%20about%20VIP%20Elite%20Coaching%20for%20%E2%82%B92%2C000%20per%20month." target="_blank" rel="noopener noreferrer">Discuss VIP Coaching</a>
+          </article>
+        </div>
+        <p class="pricing-footnote">Package details and support frequency should be confirmed before payment. Results vary by individual and depend on many factors; no specific outcome is guaranteed.</p>
+      </div>
+    </section>
+
+    <section class="section" id="health-note">
+      <div class="container">
+        <div class="safety-box">
+          <div class="safety-icon" aria-hidden="true">✦</div>
+          <div>
+            <h3>Health-first coaching</h3>
+            <p>This service provides general fitness and nutrition education, not medical care. No prescription medicines, anabolic steroids, or research peptides are prescribed, supplied, or recommended. Medication, hormone, and health-condition questions should be discussed with a licensed healthcare professional. Do not start, stop, or change medication based on fitness coaching advice.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contact">
+      <div class="container">
+        <div class="contact-panel">
+          <div>
+            <p class="eyebrow">Start a conversation</p>
+            <h2>Ready to work toward your <span class="accent-text">next goal?</span></h2>
+            <p>Send a WhatsApp message with your primary goal, training experience, available budget, and any scheduling preferences. You can discuss the available packages before deciding.</p>
+          </div>
+          <div class="contact-actions">
+            <a class="button button-primary" href="https://wa.me/919717318758?text=Hello%20Fahad%2C%20I%27m%20interested%20in%20your%20fitness%20coaching.%0A%0AMy%20primary%20goal%3A%20%0AMy%20training%20experience%3A%20%0AMy%20preferred%20package%3A%20" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.52 3.48A11.86 11.86 0 0 0 12 0C5.37 0 0 5.37 0 12a11.9 11.9 0 0 0 2.06 6.39L0 24l5.84-1.91A11.93 11.93 0 0 0 12 24c6.63 0 12-5.37 12-12 0-3.2-1.24-6.18-3.48-8.52zM12 21.5c-1.2 0-2.38-.3-3.45-.87l-.25-.14-3.47 1.14.98-3.38-.16-.28A9.29 9.29 0 0 1 2.5 12C2.5 6.75 6.75 2.5 12 2.5S21.5 6.75 21.5 12 17.25 21.5 12 21.5z"/></svg>
+              Contact on WhatsApp
+            </a>
+            <button class="button button-secondary" type="button" id="print-catalog">Print / Save as PDF</button>
+            <small>Opens WhatsApp in a new tab or window.</small>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <p class="footer-brand">FAHAD ASHRAF</p>
+        <p class="footer-copy">Fitness & Physique Coaching</p>
+        <p class="footer-copy">© <span id="current-year"></span> Fahad Ashraf. All rights reserved.</p>
+      </div>
+      <div class="social-links" aria-label="Social media links">
+        <a class="social-link" href="https://wa.me/919717318758?text=Hello%20Fahad%2C%20I%27m%20interested%20in%20your%20fitness%20coaching%20services." target="_blank" rel="noopener noreferrer" aria-label="Contact Fahad on WhatsApp">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.52 3.48A11.86 11.86 0 0 0 12 0C5.37 0 0 5.37 0 12a11.9 11.9 0 0 0 2.06 6.39L0 24l5.84-1.91A11.93 11.93 0 0 0 12 24c6.63 0 12-5.37 12-12 0-3.2-1.24-6.18-3.48-8.52zM12 21.5c-1.2 0-2.38-.3-3.45-.87l-.25-.14-3.47 1.14.98-3.38-.16-.28A9.29 9.29 0 0 1 2.5 12C2.5 6.75 6.75 2.5 12 2.5S21.5 6.75 21.5 12 17.25 21.5 12 21.5z"/></svg>
+        </a>
+        <a class="social-link" href="https://www.instagram.com/fahadashraf815" target="_blank" rel="noopener noreferrer" aria-label="Visit Fahad's Instagram profile">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c3.2 0 3.584.012 4.85.07 1.17.054 1.97.24 2.43.403.6.215 1.03.473 1.48.918.45.45.703.87.922 1.47.16.46.348 1.26.402 2.43.058 1.27.07 1.65.07 4.85s-.012 3.584-.07 4.85c-.054 1.17-.242 1.97-.402 2.43-.219.6-.472 1.03-.922 1.48-.45.45-.88.707-1.48.922-.46.16-1.26.348-2.43.402-1.27.058-1.65.07-4.85.07s-3.584-.012-4.85-.07c-1.17-.054-1.97-.242-2.43-.402-.6-.219-1.03-.472-1.48-.922-.45-.45-.707-.88-.922-1.48-.16-.46-.348-1.26-.402-2.43C2.212 15.584 2.2 15.2 2.2 12s.012-3.584.07-4.85c.054-1.17.242-1.97.402-2.43.219-.6.472-1.03.922-1.48.45-.45.88-.707 1.48-.922.46-.16 1.26-.348 2.43-.402C8.416 2.212 8.8 2.2 12 2.2m0-2.2C8.72 0 8.297.013 7.022.072 5.73.132 4.66.354 3.78.737 2.87 1.13 2.1 1.62 1.36 2.36.62 3.1.13 3.87-.27 4.78c-.383.88-.605 1.95-.665 3.24C-.013 8.297 0 8.72 0 12c0 3.28.013 3.703.072 4.978.06 1.29.282 2.36.665 3.24.4.9.99 1.67 1.73 2.41.74.74 1.51 1.33 2.41 1.73.88.383 1.95.605 3.24.665C8.297 23.987 8.72 24 12 24s3.703-.013 4.978-.072c1.29-.06 2.36-.282 3.24-.665.9-.4 1.67-.99 2.41-1.73.74-.74 1.33-1.51 1.73-2.41.383-.88.605-1.95.665-3.24C23.987 15.703 24 15.28 24 12s-.013-3.703-.072-4.978c-.06-1.29-.282-2.36-.665-3.24-.4-.9-.99-1.67-1.73-2.41C19.49.99 18.72.4 17.82 0c-.88-.383-1.95-.605-3.24-.665C15.703.013 15.28 0 12 0zM12 5.8A6.2 6.2 0 1 0 18.2 12 6.208 6.208 0 0 0 12 5.8zm0 10.2A4 4 0 1 1 16 12a4.005 4.005 0 0 1-4 4zm6.4-11.85a1.45 1.45 0 1 0 1.45 1.45 1.45 1.45 0 0 0-1.45-1.45z"/></svg>
+        </a>
+      </div>
     </div>
+  </footer>
 
-    <script>
-        function downloadPDF() {
-            const printWindow = window.open('', '_blank');
-            const content = `<!-- simplified for print -->`;
-            printWindow.document.write(content);
-            printWindow.document.close();
-        }
+  <a class="floating-whatsapp" href="https://wa.me/919717318758?text=Hello%20Fahad%2C%20I%27m%20interested%20in%20your%20fitness%20coaching%20services." target="_blank" rel="noopener noreferrer" aria-label="Chat with Fahad on WhatsApp">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.52 3.48A11.86 11.86 0 0 0 12 0C5.37 0 0 5.37 0 12a11.9 11.9 0 0 0 2.06 6.39L0 24l5.84-1.91A11.93 11.93 0 0 0 12 24c6.63 0 12-5.37 12-12 0-3.2-1.24-6.18-3.48-8.52zM12 21.5c-1.2 0-2.38-.3-3.45-.87l-.25-.14-3.47 1.14.98-3.38-.16-.28A9.29 9.29 0 0 1 2.5 12C2.5 6.75 6.75 2.5 12 2.5S21.5 6.75 21.5 12 17.25 21.5 12 21.5z"/></svg>
+    <span>Chat on WhatsApp</span>
+  </a>
 
-        // Small entrance animation for top buttons
-        document.addEventListener('DOMContentLoaded', function(){
-            const top = document.querySelector('.top-socials');
-            if (top) { top.style.transform = 'translateY(-10px)'; top.style.opacity = '0'; setTimeout(()=>{ top.style.transition='all .5s ease'; top.style.transform='translateY(0)'; top.style.opacity='1'; },250); }
-        });
-    </script>
+  <script>
+    // Mobile navigation toggle.
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navigation = document.querySelector('#primary-navigation');
+
+    menuToggle.addEventListener('click', () => {
+      const isOpen = navigation.classList.toggle('is-open');
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+      menuToggle.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
+      menuToggle.textContent = isOpen ? '×' : '☰';
+    });
+
+    navigation.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        navigation.classList.remove('is-open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.setAttribute('aria-label', 'Open navigation menu');
+        menuToggle.textContent = '☰';
+      });
+    });
+
+    // Use the browser's print dialog so visitors can print or save the page as a PDF.
+    document.querySelector('#print-catalog').addEventListener('click', () => window.print());
+    document.querySelector('#current-year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
