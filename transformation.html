@@ -497,6 +497,51 @@
             fill: currentColor;
         }
         
+        /* Top Social Bar */
+        .top-socials {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            z-index: 30;
+            padding: 10px 12px;
+            border-radius: 999px;
+            background: rgba(15, 15, 15, 0.75);
+            border: 1px solid rgba(255,255,255,0.08);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+        
+        .top-socials a {
+            width: 38px;
+            height: 38px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            text-decoration: none;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.06);
+            transition: all 0.3s ease;
+        }
+        
+        .top-socials a:hover {
+            color: var(--primary);
+            transform: translateY(-2px);
+            border-color: rgba(255, 107, 53, 0.35);
+            box-shadow: 0 8px 20px rgba(255, 107, 53, 0.12);
+        }
+        
+        .top-socials svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+        }
+        
         /* Footer */
         footer {
             text-align: center;
@@ -557,11 +602,16 @@
             h2 {
                 font-size: 1.4rem;
             }
+
+            .top-socials {
+                top: 12px;
+                right: 12px;
+            }
         }
         
         /* Print Styles */
         @media print {
-            .download-btn, .bg-animation {
+            .download-btn, .bg-animation, .top-socials {
                 display: none;
             }
             
@@ -579,6 +629,18 @@
 </head>
 <body>
     <div class="bg-animation"></div>
+    <div class="top-socials">
+        <a href="https://wa.me/919717318758?text=Hello%20Fahad%2C%20I%27m%20interested%20in%20your%20coaching%20services." target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M20.52 3.48A11.86 11.86 0 0 0 12 0C5.37 0 0 5.37 0 12a11.9 11.9 0 0 0 2.06 6.39L0 24l5.84-1.91A11.93 11.93 0 0 0 12 24c6.63 0 12-5.37 12-12 0-3.2-1.24-6.18-3.48-8.52zM12 21.5c-1.2 0-2.38-.3-3.45-.87l-.25-.14-3.47 1.14.98-3.38-.16-.28A9.29 9.29 0 0 1 2.5 12C2.5 6.75 6.75 2.5 12 2.5S21.5 6.75 21.5 12 17.25 21.5 12 21.5zM17.1 14.1c-.27-.14-1.6-.79-1.85-.88-.25-.09-.43-.14-.62.14-.19.27-.75.88-.92 1.06-.17.19-.33.21-.61.07-.28-.14-1.18-.43-2.24-1.38-.83-.74-1.39-1.66-1.55-1.94-.16-.27-.02-.42.12-.56.12-.12.27-.31.4-.47.13-.16.17-.27.26-.45.09-.18.05-.34-.02-.48-.07-.14-.62-1.5-.85-2.05-.22-.53-.45-.46-.62-.47l-.53-.01c-.18 0-.47.07-.72.34-.25.27-.96.94-.96 2.3s.98 2.66 1.12 2.84c.14.18 1.94 3.02 4.7 4.22 3.26 1.4 3.26 0.94 3.85 0.88.59-.06 1.92-.78 2.19-1.53.27-.75.27-1.39.19-1.53-.08-.14-.29-.22-.56-.36z"/>
+            </svg>
+        </a>
+        <a href="https://www.instagram.com/fahadashraf815" target="_blank" rel="noopener noreferrer" aria-label="Visit Instagram profile">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12 2.2c3.2 0 3.584.012 4.85.07 1.17.054 1.97.24 2.43.403.6.215 1.03.473 1.48.918.45.45.703.87.922 1.47.16.46.348 1.26.402 2.43.058 1.27.07 1.65.07 4.85s-.012 3.584-.07 4.85c-.054 1.17-.242 1.97-.402 2.43-.219.6-.472 1.03-.922 1.48-.45.45-.88.707-1.48.922-.46.16-1.26.348-2.43.402-1.27.058-1.65.07-4.85.07s-3.584-.012-4.85-.07c-1.17-.054-1.97-.242-2.43-.402-.6-.219-1.03-.472-1.48-.922-.45-.45-.707-.88-.922-1.48-.16-.46-.348-1.26-.402-2.43C2.212 15.584 2.2 15.2 2.2 12s.012-3.584.07-4.85c.054-1.17.242-1.97.402-2.43.219-.6.472-1.03.922-1.48.45-.45.88-.707 1.48-.922.46-.16 1.26-.348 2.43-.402C8.416 2.212 8.8 2.2 12 2.2m0-2.2C8.72 0 8.297.013 7.022.072 5.73.132 4.66.354 3.78.737 2.87 1.13 2.1 1.62 1.36 2.36.62 3.1.13 3.87-.27 4.78c-.383.88-.605 1.95-.665 3.24C-.013 8.297 0 8.72 0 12c0 3.28.013 3.703.072 4.978.06 1.29.282 2.36.665 3.24.4.9.99 1.67 1.73 2.41.74.74 1.51 1.33 2.41 1.73.88.383 1.95.605 3.24.665C8.297 23.987 8.72 24 12 24s3.703-.013 4.978-.072c1.29-.06 2.36-.282 3.24-.665.9-.4 1.67-.99 2.41-1.73.74-.74 1.33-1.51 1.73-2.41.383-.88.605-1.95.665-3.24C23.987 15.703 24 15.28 24 12s-.013-3.703-.072-4.978c-.06-1.29-.282-2.36-.665-3.24-.4-.9-.99-1.67-1.73-2.41C19.49.99 18.72.4 17.82 0c-.88-.383-1.95-.605-3.24-.665C15.703.013 15.28 0 12 0zM12 5.8A6.2 6.2 0 1 0 18.2 12 6.208 6.208 0 0 0 12 5.8zm0 10.2A4 4 0 1 1 16 12a4.005 4.005 0 0 1-4 4zm6.4-11.85a1.45 1.45 0 1 0 1.45 1.45 1.45 1.45 0 0 0-1.45-1.45z"/>
+            </svg>
+        </a>
+    </div>
     
     <div class="container">
         <header>
