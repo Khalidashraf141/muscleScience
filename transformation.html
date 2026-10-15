@@ -91,6 +91,9 @@
     .nav-links a { color: var(--muted); font-size: 0.9rem; font-weight: 600; text-decoration: none; transition: color .2s ease; }
     .nav-links a:hover { color: var(--text); }
     .nav-links .nav-cta { color: var(--text); }
+    .nav-links .nav-instagram { display: grid; place-items: center; width: 42px; height: 42px; flex: 0 0 auto; border-radius: 50%; background: radial-gradient(circle at 30% 110%, #feda75 0%, #feda75 5%, #fa7e1e 35%, #d62976 60%, #962fbf 80%, #4f5bd5 100%); color: #fff; transition: transform .2s ease, box-shadow .2s ease; }
+    .nav-links .nav-instagram:hover { color: #fff; transform: translateY(-2px); box-shadow: 0 8px 20px rgba(214, 41, 118, .22); }
+    .nav-instagram svg { width: 21px; height: 21px; fill: currentColor; }
     .menu-toggle { display: none; border: 1px solid var(--line); background: var(--surface-strong); color: var(--text); border-radius: 12px; width: 44px; height: 44px; font-size: 1.3rem; cursor: pointer; }
 
     /* Buttons */
@@ -213,6 +216,7 @@
       }
       .nav-links.is-open { display: flex; }
       .nav-links a { padding: 12px 8px; }
+      .nav-links .nav-instagram { align-self: flex-start; width: 42px; height: 42px; padding: 0; margin: 8px 0 12px; }
       .nav-links .nav-cta { margin-top: 7px; text-align: center; }
       .hero { padding-block: 58px 44px; }
       .hero-grid { grid-template-columns: 1fr; gap: 34px; }
@@ -261,6 +265,9 @@
         <a href="#services">Coaching</a>
         <a href="#process">How It Works</a>
         <a href="#pricing">Packages</a>
+        <a class="nav-instagram" href="https://www.instagram.com/fahadashraf815/?hl=en" target="_blank" rel="noopener noreferrer" aria-label="Visit Fahad's Instagram profile" title="Instagram">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm5.25-3.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5Z"/></svg>
+        </a>
         <a class="nav-cta button button-primary" href="https://wa.me/919717318758?text=Hello%20Fahad%2C%20I%27m%20interested%20in%20your%20fitness%20coaching%20services." target="_blank" rel="noopener noreferrer">Contact on WhatsApp</a>
       </nav>
     </div>
@@ -308,7 +315,7 @@
         <div class="section-heading">
           <p class="eyebrow">About the coaching</p>
           <h2>A plan that fits <span class="accent-text">your life.</span></h2>
-          <p class="section-intro">I'm Fahad Ashraf. My coaching approach focuses on helping you work toward your physique and fitness goals with a clear plan, consistent effort, and regular progress reviews. The starting point is understanding your goal, training background, preferences, and schedule.</p>
+          <p class="section-intro">I'm Fahad Ashraf, a fitness coach and certified cycle designer. My coaching approach focuses on helping you work toward your physique and fitness goals with a clear plan, consistent effort, and regular progress reviews. I also provide educational discussion of anabolic-cycle design and post-cycle therapy (PCT), with health risks and medical oversight kept central.</p>
         </div>
       </div>
     </section>
@@ -351,6 +358,11 @@
             <div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 7.5-7 10-4-2.5-7-5.5-7-10V6l7-3zM9 12l2 2 4-4"/></svg></div>
             <h3>Progress & Recovery Habits</h3>
             <p>Review consistency, training response, sleep, and recovery habits to help make your plan more sustainable.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6M10 3v5l-5.5 9.2A2.5 2.5 0 0 0 6.6 21h10.8a2.5 2.5 0 0 0 2.1-3.8L14 8V3M8 15h8M9.5 18h5"/></svg></div>
+            <h3>Anabolic Cycle Design & PCT Guidance</h3>
+            <p>I am a certified cycle designer offering anabolic cycle design, OCT, and PCT.</p>
           </article>
         </div>
       </div>
@@ -456,17 +468,6 @@
       </div>
     </section>
 
-    <section class="section" id="health-note">
-      <div class="container">
-        <div class="safety-box">
-          <div class="safety-icon" aria-hidden="true">✦</div>
-          <div>
-            <h3>Health-first coaching</h3>
-            <p>This service provides general fitness and nutrition education, not medical care. No prescription medicines, anabolic steroids, or research peptides are prescribed, supplied, or recommended. Medication, hormone, and health-condition questions should be discussed with a licensed healthcare professional. Do not start, stop, or change medication based on fitness coaching advice.</p>
-          </div>
-        </div>
-      </div>
-    </section>
 
     <section class="section contact-section" id="contact">
       <div class="container">
@@ -500,7 +501,7 @@
         <a class="social-link" href="https://wa.me/919717318758?text=Hello%20Fahad%2C%20I%27m%20interested%20in%20your%20fitness%20coaching%20services." target="_blank" rel="noopener noreferrer" aria-label="Contact Fahad on WhatsApp">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.52 3.48A11.86 11.86 0 0 0 12 0C5.37 0 0 5.37 0 12a11.9 11.9 0 0 0 2.06 6.39L0 24l5.84-1.91A11.93 11.93 0 0 0 12 24c6.63 0 12-5.37 12-12 0-3.2-1.24-6.18-3.48-8.52zM12 21.5c-1.2 0-2.38-.3-3.45-.87l-.25-.14-3.47 1.14.98-3.38-.16-.28A9.29 9.29 0 0 1 2.5 12C2.5 6.75 6.75 2.5 12 2.5S21.5 6.75 21.5 12 17.25 21.5 12 21.5z"/></svg>
         </a>
-        <a class="social-link" href="https://www.instagram.com/fahadashraf815" target="_blank" rel="noopener noreferrer" aria-label="Visit Fahad's Instagram profile">
+        <a class="social-link" href="https://www.instagram.com/fahadashraf815/?hl=en" target="_blank" rel="noopener noreferrer" aria-label="Visit Fahad's Instagram profile">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c3.2 0 3.584.012 4.85.07 1.17.054 1.97.24 2.43.403.6.215 1.03.473 1.48.918.45.45.703.87.922 1.47.16.46.348 1.26.402 2.43.058 1.27.07 1.65.07 4.85s-.012 3.584-.07 4.85c-.054 1.17-.242 1.97-.402 2.43-.219.6-.472 1.03-.922 1.48-.45.45-.88.707-1.48.922-.46.16-1.26.348-2.43.402-1.27.058-1.65.07-4.85.07s-3.584-.012-4.85-.07c-1.17-.054-1.97-.242-2.43-.402-.6-.219-1.03-.472-1.48-.922-.45-.45-.707-.88-.922-1.48-.16-.46-.348-1.26-.402-2.43C2.212 15.584 2.2 15.2 2.2 12s.012-3.584.07-4.85c.054-1.17.242-1.97.402-2.43.219-.6.472-1.03.922-1.48.45-.45.88-.707 1.48-.922.46-.16 1.26-.348 2.43-.402C8.416 2.212 8.8 2.2 12 2.2m0-2.2C8.72 0 8.297.013 7.022.072 5.73.132 4.66.354 3.78.737 2.87 1.13 2.1 1.62 1.36 2.36.62 3.1.13 3.87-.27 4.78c-.383.88-.605 1.95-.665 3.24C-.013 8.297 0 8.72 0 12c0 3.28.013 3.703.072 4.978.06 1.29.282 2.36.665 3.24.4.9.99 1.67 1.73 2.41.74.74 1.51 1.33 2.41 1.73.88.383 1.95.605 3.24.665C8.297 23.987 8.72 24 12 24s3.703-.013 4.978-.072c1.29-.06 2.36-.282 3.24-.665.9-.4 1.67-.99 2.41-1.73.74-.74 1.33-1.51 1.73-2.41.383-.88.605-1.95.665-3.24C23.987 15.703 24 15.28 24 12s-.013-3.703-.072-4.978c-.06-1.29-.282-2.36-.665-3.24-.4-.9-.99-1.67-1.73-2.41C19.49.99 18.72.4 17.82 0c-.88-.383-1.95-.605-3.24-.665C15.703.013 15.28 0 12 0zM12 5.8A6.2 6.2 0 1 0 18.2 12 6.208 6.208 0 0 0 12 5.8zm0 10.2A4 4 0 1 1 16 12a4.005 4.005 0 0 1-4 4zm6.4-11.85a1.45 1.45 0 1 0 1.45 1.45 1.45 1.45 0 0 0-1.45-1.45z"/></svg>
         </a>
       </div>
