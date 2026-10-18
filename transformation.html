@@ -10,6 +10,25 @@
 
   gtag('config', 'AW-17761647681');
 </script>
+  <!-- Event snippet for Contact conversion page
+In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+<script>
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-17761647681/vzj0CNKMxqEdEMH4tJVC',
+      'value': 1.0,
+      'currency': 'INR',
+      'event_callback': callback
+  });
+  return false;
+}
+</script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#0b0c0f">
@@ -283,7 +302,7 @@
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm5.25-3.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5Z"/></svg>
         </a>
         <a class="nav-youtube" href="https://youtube.com/@fahadashraf811?si=qDgQQpQlsEJsFzr1" target="_blank" rel="noopener noreferrer" aria-label="Visit Fahad's YouTube channel" title="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.3 3.6-6.3 3.6Z"/></svg></a>
-        <a class="nav-cta button button-primary" href="https://wa.me/919717318758?text=Hello%20Fahad%2C%20I%27m%20interested%20in%20your%20fitness%20coaching%20services." target="_blank" rel="noopener noreferrer">Contact on WhatsApp</a>
+        <a class="nav-cta button button-primary" href="https://wa.me/919311097851?text=Hello%20Fahad%2C%20I%27m%20interested%20in%20your%20fitness%20coaching%20services." target="_blank" rel="noopener noreferrer">Contact on WhatsApp</a>
       </nav>
     </div>
   </header>
@@ -297,7 +316,7 @@
             <h1>Build strength.<br><span class="accent-text">Shape your physique.</span></h1>
             <p class="hero-copy">Practical fitness coaching built around your goals, training experience, nutrition habits, and everyday routine. Follow a structured plan, track your progress, and make consistency part of your lifestyle.</p>
             <div class="hero-actions">
-              <a class="button button-primary" href="https://wa.me/919717318758?text=Hello%20Fahad%2C%20I%27d%20like%20to%20discuss%20my%20fitness%20goals." target="_blank" rel="noopener noreferrer">
+              <a class="button button-primary" href="https://wa.me/919311097851?text=Hello%20Fahad%2C%20I%27d%20like%20to%20discuss%20my%20fitness%20goals." target="_blank" rel="noopener noreferrer">
                 Discuss Your Goals
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </a>
@@ -431,7 +450,7 @@
               <li>General nutrition guidance</li>
               <li>Independent, self-guided execution</li>
             </ul>
-            <a class="button button-secondary" href="https://wa.me/919717318758?text=Hello%20Fahad%2C%20I%27m%20interested%20in%20the%20Starter%20Plan%20for%20%E2%82%B9500." target="_blank" rel="noopener noreferrer">Ask About This Plan</a>
+            <a class="button button-secondary" href="https://wa.me/919311097851?text=Hello%20Fahad%2C%20I%27m%20interested%20in%20the%20Starter%20Plan%20for%20%E2%82%B9500." target="_blank" rel="noopener noreferrer">Ask About This Plan</a>
           </article>
 
           <article class="price-card featured">
@@ -445,7 +464,7 @@
               <li>Progress tracking</li>
               <li>WhatsApp support</li>
             </ul>
-            <a class="button button-primary" href="https://wa.me/919717318758?text=Hello%20Fahad%2C%20I%27m%20interested%20in%20Monthly%20Guidance%20for%20%E2%82%B91%2C000." target="_blank" rel="noopener noreferrer">Choose Monthly Guidance</a>
+            <a class="button button-primary" href="https://wa.me/919311097851?text=Hello%20Fahad%2C%20I%27m%20interested%20in%20Monthly%20Guidance%20for%20%E2%82%B91%2C000." target="_blank" rel="noopener noreferrer">Choose Monthly Guidance</a>
           </article>
 
           <article class="price-card">
@@ -459,7 +478,7 @@
               <li>Planned training progression</li>
               <li>Priority support</li>
             </ul>
-            <a class="button button-secondary" href="https://wa.me/919717318758?text=Hello%20Fahad%2C%20I%27m%20interested%20in%20the%20Quarterly%20Transformation%20package%20for%20%E2%82%B92%2C500." target="_blank" rel="noopener noreferrer">Ask About This Plan</a>
+            <a class="button button-secondary" href="https://wa.me/919311097851?text=Hello%20Fahad%2C%20I%27m%20interested%20in%20the%20Quarterly%20Transformation%20package%20for%20%E2%82%B92%2C500." target="_blank" rel="noopener noreferrer">Ask About This Plan</a>
           </article>
         </div>
 
@@ -476,7 +495,7 @@
               <li>Regular accountability check-ins through WhatsApp</li>
               <li>Priority messaging support</li>
             </ul>
-            <a class="button button-primary" href="https://wa.me/919717318758?text=Hello%20Fahad%2C%20I%27d%20like%20more%20information%20about%20VIP%20Elite%20Coaching%20for%20%E2%82%B92%2C000%20per%20month." target="_blank" rel="noopener noreferrer">Discuss VIP Coaching</a>
+            <a class="button button-primary" href="https://wa.me/919311097851?text=Hello%20Fahad%2C%20I%27d%20like%20more%20information%20about%20VIP%20Elite%20Coaching%20for%20%E2%82%B92%2C000%20per%20month." target="_blank" rel="noopener noreferrer">Discuss VIP Coaching</a>
           </article>
         </div>
         <p class="pricing-footnote">Package details and support frequency should be confirmed before payment. Results vary by individual and depend on many factors; no specific outcome is guaranteed.</p>
@@ -493,7 +512,7 @@
             <p>Send a WhatsApp message with your primary goal, training experience, available budget, and any scheduling preferences. You can discuss the available packages before deciding.</p>
           </div>
           <div class="contact-actions">
-            <a class="button button-primary" href="https://wa.me/919717318758?text=Hello%20Fahad%2C%20I%27m%20interested%20in%20your%20fitness%20coaching.%0A%0AMy%20primary%20goal%3A%20%0AMy%20training%20experience%3A%20%0AMy%20preferred%20package%3A%20" target="_blank" rel="noopener noreferrer">
+            <a class="button button-primary" href="https://wa.me/919311097851?text=Hello%20Fahad%2C%20I%27m%20interested%20in%20your%20fitness%20coaching.%0A%0AMy%20primary%20goal%3A%20%0AMy%20training%20experience%3A%20%0AMy%20preferred%20package%3A%20" target="_blank" rel="noopener noreferrer">
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.52 3.48A11.86 11.86 0 0 0 12 0C5.37 0 0 5.37 0 12a11.9 11.9 0 0 0 2.06 6.39L0 24l5.84-1.91A11.93 11.93 0 0 0 12 24c6.63 0 12-5.37 12-12 0-3.2-1.24-6.18-3.48-8.52zM12 21.5c-1.2 0-2.38-.3-3.45-.87l-.25-.14-3.47 1.14.98-3.38-.16-.28A9.29 9.29 0 0 1 2.5 12C2.5 6.75 6.75 2.5 12 2.5S21.5 6.75 21.5 12 17.25 21.5 12 21.5z"/></svg>
               Contact on WhatsApp
             </a>
@@ -513,7 +532,7 @@
         <p class="footer-copy">© <span id="current-year"></span> Fahad Ashraf. All rights reserved.</p>
       </div>
       <div class="social-links" aria-label="Social media links">
-        <a class="social-link" href="https://wa.me/919717318758?text=Hello%20Fahad%2C%20I%27m%20interested%20in%20your%20fitness%20coaching%20services." target="_blank" rel="noopener noreferrer" aria-label="Contact Fahad on WhatsApp">
+        <a class="social-link" href="https://wa.me/919311097851?text=Hello%20Fahad%2C%20I%27m%20interested%20in%20your%20fitness%20coaching%20services." target="_blank" rel="noopener noreferrer" aria-label="Contact Fahad on WhatsApp">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.52 3.48A11.86 11.86 0 0 0 12 0C5.37 0 0 5.37 0 12a11.9 11.9 0 0 0 2.06 6.39L0 24l5.84-1.91A11.93 11.93 0 0 0 12 24c6.63 0 12-5.37 12-12 0-3.2-1.24-6.18-3.48-8.52zM12 21.5c-1.2 0-2.38-.3-3.45-.87l-.25-.14-3.47 1.14.98-3.38-.16-.28A9.29 9.29 0 0 1 2.5 12C2.5 6.75 6.75 2.5 12 2.5S21.5 6.75 21.5 12 17.25 21.5 12 21.5z"/></svg>
         </a>
         <a class="social-link" href="https://www.instagram.com/fahadashraf815/?hl=en" target="_blank" rel="noopener noreferrer" aria-label="Visit Fahad's Instagram profile">
@@ -526,7 +545,7 @@
     </div>
   </footer>
 
-  <a class="floating-whatsapp" href="https://wa.me/919717318758?text=Hello%20Fahad%2C%20I%27m%20interested%20in%20your%20fitness%20coaching%20services." target="_blank" rel="noopener noreferrer" aria-label="Chat with Fahad on WhatsApp">
+  <a class="floating-whatsapp" href="https://wa.me/919311097851?text=Hello%20Fahad%2C%20I%27m%20interested%20in%20your%20fitness%20coaching%20services." target="_blank" rel="noopener noreferrer" aria-label="Chat with Fahad on WhatsApp">
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.52 3.48A11.86 11.86 0 0 0 12 0C5.37 0 0 5.37 0 12a11.9 11.9 0 0 0 2.06 6.39L0 24l5.84-1.91A11.93 11.93 0 0 0 12 24c6.63 0 12-5.37 12-12 0-3.2-1.24-6.18-3.48-8.52zM12 21.5c-1.2 0-2.38-.3-3.45-.87l-.25-.14-3.47 1.14.98-3.38-.16-.28A9.29 9.29 0 0 1 2.5 12C2.5 6.75 6.75 2.5 12 2.5S21.5 6.75 21.5 12 17.25 21.5 12 21.5z"/></svg>
     <span>Chat on WhatsApp</span>
   </a>
@@ -555,6 +574,15 @@
     // Use the browser's print dialog so visitors can print or save the page as a PDF.
     document.querySelector('#print-catalog').addEventListener('click', () => window.print());
     document.querySelector('#current-year').textContent = new Date().getFullYear();
+
+    // Track clicks on WhatsApp links as the Google Ads Contact conversion.
+    // Calling the conversion function without a URL preserves each link's
+    // existing target behavior (these links open in a new tab).
+    document.querySelectorAll('a[href^="https://wa.me/"]').forEach((link) => {
+      link.addEventListener('click', () => {
+        gtag_report_conversion();
+      });
+    });
   </script>
 </body>
 </html>
